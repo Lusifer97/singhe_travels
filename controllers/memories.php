@@ -20,8 +20,8 @@ class Memories extends Controller
         // echo Cookie::set('jjjj', 'aaaaaaaa', time() + (86400 * 30), '/');
         //    echo Cookie::unset_cookie('name2','/');
         // var_dump($_COOKIE);
-        $this->view->albums = $this->model->selectAll();
-        $this->view->title = "Photo Collection";
+        // $this->view->albums = $this->model->selectAll();
+        $this->view->title = "Memory Collection";
         $this->view->render('header');
         $this->view->render('navigation');
         $this->view->render('memories/index');
@@ -32,15 +32,15 @@ class Memories extends Controller
 
     }
 
-    function photos($id)
+    function images()
     {   
-        $id = base64_decode($id);
-        $this->view->albums_details = $this->model->getOne($id);
-        $this->view->photos = $this->model->getPhotos($id);
-        $this->view->title = "Photo Collection";
+        
+        // $this->view->albums_details = $this->model->getOne($id);
+        // $this->view->photos = $this->model->getPhotos($id);
+        $this->view->title = "Image Collection";
         $this->view->render('header');
         $this->view->render('navigation');
-        $this->view->render('memories/photos');
+        $this->view->render('memories/images');
         $this->view->render('footer');
     }
 
