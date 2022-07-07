@@ -11,7 +11,7 @@
     define('HOST', $host);
     define('DEVELOPMENT_MODE', 1);
 
-    define('URL', $protocol . $host . '/PHP-MVC-main/base/');
+    define('URL', $protocol . $host . '/singhe_travels/');
     define('PUBLIC_URL', URL . 'public/');
     
     //mail
