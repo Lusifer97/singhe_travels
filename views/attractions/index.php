@@ -3,11 +3,11 @@
     <div class="breadcrumb-outer">
         <div class="container">
             <div class="breadcrumb-content text-center">
-                <h1 class="mb-3">Tour List</h1>
+                <h1 class="mb-3">Attractions</h1>
                 <nav aria-label="breadcrumb" class="d-block">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tour Lists Rightside</li>
+                        <li class="breadcrumb-item active" aria-current="page">Attractions</li>
                     </ul>
                 </nav>
             </div>
@@ -70,7 +70,7 @@
                                         <h3 class="mb-0">$125</h3>
                                         <small>Per Adult</small>
                                     </div>
-                                    <a href="tour-single.html" class="nir-btn">View Detail</a>
+                                    <a href="<?=URL;?>attractions/details" class="nir-btn">View Detail</a>
                                 </div>
                             </div>
                         </div>
