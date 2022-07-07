@@ -54,37 +54,15 @@
                                 </li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li class="submenu dropdown">
-                                    <a href="<?= URL; ?>attractions" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attractions</a>
-                                     
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Destinations <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="destination-list.html">Destination List</a></li>
+                                        <li><a href="destination-detail.html">Destination Detail</a></li>
+                                    </ul>
                                 </li>
                                 <li class="submenu dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tours <i class="icon-arrow-down" aria-hidden="true"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="submenu dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tour List<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="tour-list.html">Tour List Leftsidebar</a></li>
-                                                <li><a href="tour-list1.html">Tour List Rightsidebar</a></li>
-                                                <li><a href="tour-list2.html">Tour List Fullwidth</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="submenu dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tour Grid<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="tour-grid.html">Tour Grid Leftsidebar</a></li>
-                                                <li><a href="tour-grid1.html">Tour Grid Rightsidebar</a></li>
-                                                <li><a href="tour-grid2.html">Tour Grid Fullwidth</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="submenu dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tour Single<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="tour-single.html">Tour Single Leftsidebar</a></li>
-                                                <li><a href="tour-single1.html">Tour Single Rightsidebar</a></li>
-                                                <li><a href="tour-single2.html">Tour Single Fullwidth</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <a href="<?= URL; ?>packages" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tours </a>
+                                     
                                 </li>
                                 <li class="submenu dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <i class="icon-arrow-down" aria-hidden="true"></i></a>
