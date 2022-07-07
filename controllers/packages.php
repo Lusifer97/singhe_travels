@@ -25,22 +25,22 @@ class Packages extends Controller
         
     }
 
-    function details($id){
-        $id = base64_decode($id);
+    function details(){
+//        $id = base64_decode($id);
          
          
-        $this->view->data = $this->model->selectOne($id);
-        $this->view->destinations = $this->model->getTours($id);
-        $this->view->facilities = $this->model->getfacilities($id);
-        $this->view->plan = $this->model->getPlan($id);
-        $this->view->photos = $this->model->getPhotos($id);
-        $this->view->simillarPackages = $this->model->simillarPackages($id);
-        // $this->view->popularPackage = $this->model->popularPackage();
-        $this->view->feedback = $this->model->getFeedback($id);
-        // $this->view->title = "Tour Details";
+//        $this->view->data = $this->model->selectOne($id);
+//        $this->view->destinations = $this->model->getTours($id);
+//        $this->view->facilities = $this->model->getfacilities($id);
+//        $this->view->plan = $this->model->getPlan($id);
+//        $this->view->photos = $this->model->getPhotos($id);
+//        $this->view->simillarPackages = $this->model->simillarPackages($id);
+//        // $this->view->popularPackage = $this->model->popularPackage();
+//        $this->view->feedback = $this->model->getFeedback($id);
+        $this->view->title = "Package Details";
         $this->view->render('header');
         $this->view->render('navigation');
-        $this->view->render('tours/details');
+        $this->view->render('packages/details');
         $this->view->render('footer');
     }
 
