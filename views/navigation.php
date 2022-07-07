@@ -54,7 +54,7 @@
                                 </li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li class="submenu dropdown">
-                                    <a href="<?=URL;?>attractions" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Destinations </a>
+                                    <a href="<?=URL;?>attractions" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attractions </a>
                                     
                                 </li>
                                 <li class="submenu dropdown">
@@ -62,8 +62,12 @@
                                      
                                 </li>
                                 <li class="submenu dropdown">
+
                                     <a href="<?= URL; ?>memories" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memories </a>
                                      
+                                    <a href="<?=URL;?>accommodations" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accommodations </a>
+                                    
+
                                 </li>
                                 <li class="submenu dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <i class="icon-arrow-down" aria-hidden="true"></i></a>
