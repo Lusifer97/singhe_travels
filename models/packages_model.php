@@ -1,6 +1,6 @@
 <?php
 // import('./libs/custom/User_Login_Model');
-class Tours_Model extends Model
+class Packages_Model extends Model
 {
 
     function __construct()

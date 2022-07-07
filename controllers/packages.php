@@ -1,7 +1,7 @@
 <?php
 // import('./libs/Controller');
 
-class Tours extends Controller
+class Packages extends Controller
 {
 
     function __construct()
@@ -11,33 +11,13 @@ class Tours extends Controller
 
     function index()
     {
-
-        $this->load_css(
-            [
-                PUBLIC_URL."plugins/revslider/public/assets/css/settings.css",
-                PUBLIC_URL."plugins/tourmaster/plugins/elegant-font/style.css",
-                PUBLIC_URL."plugins/tourmaster/tourmaster.css",
-                PUBLIC_URL."plugins/goodlayers-core/plugins/combine/style.css",
-                PUBLIC_URL."plugins/goodlayers-core/include/css/page-builder.css",
-                PUBLIC_URL."css/tourmaster-style-custom.css",
-                PUBLIC_URL."css/style-core.css",
-                PUBLIC_URL."css/traveltour-style-custom.css"
-                ]
-        );
-        // $this->load_js(
-        //     [
-                
-        //         ]
-        // );
-        // echo Cookie::set('jjjj', 'aaaaaaaa', time() + (86400 * 30), '/');
-        //    echo Cookie::unset_cookie('name2','/');
-        // var_dump($_COOKIE);
+//
         $this->view->data = $this->model->selectAll();
-        $this->view->getStatus = $this->model->getStatus();
+//        $this->view->getStatus = $this->model->getStatus();
         $this->view->title = "Best Tour Collections";
         $this->view->render('header');
         $this->view->render('navigation');
-        $this->view->render('tours/new');
+        $this->view->render('packages/index');
         $this->view->render('footer');
         // var_dump(LOGIN_CONFIG);
         //   var_dump( Hash::create('whirlpool', '1234', SALT));
