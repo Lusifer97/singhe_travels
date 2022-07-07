@@ -1,7 +1,7 @@
 <?php
 // import('./libs/Controller');
 
-class Destinations extends Controller
+class Attractions extends Controller
 {
 
     function __construct()
@@ -20,16 +20,16 @@ class Destinations extends Controller
         // echo Cookie::set('jjjj', 'aaaaaaaa', time() + (86400 * 30), '/');
         //    echo Cookie::unset_cookie('name2','/');
         // var_dump($_COOKIE);
-        $this->view->data = $this->model->selectAll();
-        $this->view->getCategory = $this->model->getCategory();
+        // $this->view->data = $this->model->selectAll();
+        // $this->view->getCategory = $this->model->getCategory();
         // $this->view->getPrice = $this->model->getPrice();
         // $this->view->getCity = $this->model->getCity();
-        $this->view->popularpackages = $this->model->popularPackage();
-        $this->view->articals = $this->model->getArticals();
+        // $this->view->popularpackages = $this->model->popularPackage();
+        // $this->view->articals = $this->model->getArticals();
         $this->view->title = "Magical Destinations";
         $this->view->render('header');
         $this->view->render('navigation');
-        $this->view->render('destinations/index');
+        $this->view->render('attractions/index');
         $this->view->render('footer');
         // var_dump(LOGIN_CONFIG);
         //   var_dump( Hash::create('whirlpool', '1234', SALT));
