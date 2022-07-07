@@ -62,6 +62,10 @@
                                      
                                 </li>
                                 <li class="submenu dropdown">
+                                    <a href="<?= URL; ?>memories" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Memories </a>
+                                     
+                                </li>
+                                <li class="submenu dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <i class="icon-arrow-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="team.html">Our Guide</a></li>
