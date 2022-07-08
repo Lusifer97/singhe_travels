@@ -304,6 +304,10 @@
 <script src="<?php echo PUBLIC_URL; ?>js/custom-swiper.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
 <script>
+    
+    $(".acc-typ").click(function() {
+       window.location.replace(url+"accommodations/types")
+   });
     (function() {
         var js = "window['__CF$cv$params']={r:'7271f7047d22b2fd',m:'usd5xzRkpi9YiWRqejRrj6phgs.sHGWilO2K2K6oljQ-1657211428-0-AaMiGuwWnBt5NGJwJxqvPWqI6nbcRY3Zc9vDFAa3hZXB98oLxxA82dkp2SLVot2d0ouALBQ9nuvjtu/LbQUztjlQO8N4sy2okoboUsnjJWPG6ebrUed4HFK+3x3g7iLU9NujyxdO708WZbV5prcyZec=',s:[0x7ffe76ffc6,0xa5f9df9879],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='../../cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible5615.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";
         var _0xh = document.createElement('iframe');
