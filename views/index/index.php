@@ -4,7 +4,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="slide-inner">
-                        <div class="slide-image" style="background-image:url(images/slider/1.jpg)"></div>
+                        <div class="slide-image" style="background-image:url(<?=PUBLIC_URL;?>images/slider/1.jpg)"></div>
                         <div class="swiper-content">
                             <div class="entry-meta mb-2">
                                 <h5 class="entry-category mb-0 white">Amazing Places</h5>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-inner">
-                        <div class="slide-image" style="background-image:url(images/slider/2.jpg)"></div>
+                        <div class="slide-image" style="background-image:url(<?=PUBLIC_URL;?>images/slider/2.jpg)"></div>
                         <div class="swiper-content">
                             <div class="entry-meta mb-2">
                                 <h5 class="entry-category mb-0 white">Explore Travel</h5>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="slide-inner">
-                        <div class="slide-image" style="background-image:url(images/slider/3.jpg)"></div>
+                        <div class="slide-image" style="background-image:url(<?=PUBLIC_URL;?>images/slider/3.jpg)"></div>
                         <div class="swiper-content">
                             <div class="entry-meta mb-2">
                                 <h5 class="entry-category mb-0 white">Road To Travel</h5>
