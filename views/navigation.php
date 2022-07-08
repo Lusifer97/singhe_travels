@@ -37,7 +37,7 @@
                             <li><a href="<?= URL; ?>packages">Tours</a></li>
                             <li><a href="<?= URL; ?>memories">Memories</a></li>
                             <li><a href="<?= URL; ?>accommodations">Accomadation</a></li>
-                            <li><a href="<?= URL; ?>accommodations">About Us</a></li>
+                            <li><a href="<?= URL; ?>aboutus">About Us</a></li>
                             <li><a href="<?= URL; ?>contactus">Contact Us</a></li>
                             <li><a href="<?= URL; ?>blog">Blog</a></li>
 
