@@ -39,7 +39,7 @@
                             <li><a href="<?= URL; ?>accommodations">Accomadation</a></li>
                             <li><a href="<?= URL; ?>accommodations">About Us</a></li>
                             <li><a href="<?= URL; ?>contactus">Contact Us</a></li>
-                            <li><a href="<?= URL; ?>accommodations">Blog</a></li>
+                            <li><a href="<?= URL; ?>blog">Blog</a></li>
 
                              
                              

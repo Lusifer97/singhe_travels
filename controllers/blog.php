@@ -20,8 +20,8 @@ class Blog extends Controller
         // echo Cookie::set('jjjj', 'aaaaaaaa', time() + (86400 * 30), '/');
         //    echo Cookie::unset_cookie('name2','/');
         // var_dump($_COOKIE);
-        $this->view->data = $this->model->selectAll();
-        $this->view->title = "Travels Articals";
+        // $this->view->data = $this->model->selectAll();
+        $this->view->title = "Travel Articals";
         $this->view->render('header');
         $this->view->render('navigation');
         $this->view->render('blog/index');
@@ -32,9 +32,9 @@ class Blog extends Controller
         
     }
 
-    function details($id){
-        $id = base64_decode($id);
-        $this->view->data = $this->model->getOne($id);
+    function details(){
+        // $id = base64_decode($id);
+        // $this->view->data = $this->model->getOne($id);
         $this->view->title = "details";
         $this->view->render('header');
         $this->view->render('navigation');
