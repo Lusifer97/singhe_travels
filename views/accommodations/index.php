@@ -64,146 +64,135 @@
     <section class="trending pb-0 pt-6">
         <div class="container">
             <div class="section-title mb-6 w-50 mx-auto text-center">
-                <h4 class="mb-1 theme1">Accommodation</h4>
                 <h2 class="mb-1">Explore <span class="theme">Top Accommodation</span></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
             </div>
             <div class="row align-items-center">
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Italy</a></h5>
-                                    <h3 class="mb-0 white">Caspian Valley</h3>
+
+
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4" style="cursor: pointer">
+                    <a href="<?= URL ?>types">
+                        <div class="trend-item1 acc-typ">
+
+                            <div class="trend-image ">
+                                <img src="<?= PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
+                                <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
+                                                       <a href="<?= URL ?>types">
+
+                                    <div class="trend-content-title">
+                                        <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Italy</a></h5>
+                                        <h3 class="mb-0 white">Caspian Valley</h3>
+                                    </div>
+                                                       </a>
+                                    <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
                                 </div>
-                                <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
+                                <div class="color-overlay"></div>
                             </div>
-                            <div class="color-overlay"></div>
                         </div>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination14.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Tokyo</a></h5>
-                                    <h3 class="mb-0 white">Japan</h3>
+
+
+<div class="col-lg-4 col-md-6 col-sm-6 mb-4" style="cursor: pointer">
+                    <a href="<?= URL ?>types">
+                        <div class="trend-item1 acc-typ">
+
+                            <div class="trend-image ">
+                                <img src="<?= PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
+                                <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
+                                                       <a href="<?= URL ?>types">
+
+                                    <div class="trend-content-title">
+                                        <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Italy</a></h5>
+                                        <h3 class="mb-0 white">Caspian Valley</h3>
+                                    </div>
+                                                       </a>
+                                    <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
                                 </div>
-                                <span class="white bg-theme p-1 px-2 rounded">21 Tours</span>
+                                <div class="color-overlay"></div>
                             </div>
-                            <div class="color-overlay"></div>
                         </div>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination15.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Moscow</a></h5>
-                                    <h3 class="mb-0 white">Russia</h3>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4" style="cursor: pointer">
+                    <a href="<?= URL ?>types">
+                        <div class="trend-item1 acc-typ">
+
+                            <div class="trend-image ">
+                                <img src="<?= PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
+                                <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
+                                                       <a href="<?= URL ?>types">
+
+                                    <div class="trend-content-title">
+                                        <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Italy</a></h5>
+                                        <h3 class="mb-0 white">Caspian Valley</h3>
+                                    </div>
+                                                       </a>
+                                    <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
                                 </div>
-                                <span class="white bg-theme p-1 px-2 rounded">15 Tours</span>
+                                <div class="color-overlay"></div>
                             </div>
-                            <div class="color-overlay"></div>
                         </div>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination5.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Bangkok</a></h5>
-                                    <h3 class="mb-0 white">Thailand</h3>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4" style="cursor: pointer">
+                    <a href="<?= URL ?>types">
+                        <div class="trend-item1 acc-typ">
+
+                            <div class="trend-image ">
+                                <img src="<?= PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
+                                <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
+                                                       <a href="<?= URL ?>types">
+
+                                    <div class="trend-content-title">
+                                        <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Italy</a></h5>
+                                        <h3 class="mb-0 white">Caspian Valley</h3>
+                                    </div>
+                                                       </a>
+                                    <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
                                 </div>
-                                <span class="white bg-theme p-1 px-2 rounded">24 Tours</span>
+                                <div class="color-overlay"></div>
                             </div>
-                            <div class="color-overlay"></div>
                         </div>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination16.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Florida</a></h5>
-                                    <h3 class="mb-0 white">America</h3>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4" style="cursor: pointer">
+                    <a href="<?= URL ?>types">
+                        <div class="trend-item1 acc-typ">
+
+                            <div class="trend-image ">
+                                <img src="<?= PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
+                                <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
+                                                       <a href="<?= URL ?>types">
+
+                                    <div class="trend-content-title">
+                                        <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Italy</a></h5>
+                                        <h3 class="mb-0 white">Caspian Valley</h3>
+                                    </div>
+                                                       </a>
+                                    <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
                                 </div>
-                                <span class="white bg-theme p-1 px-2 rounded">32 Tours</span>
+                                <div class="color-overlay"></div>
                             </div>
-                            <div class="color-overlay"></div>
                         </div>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination4.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Bali</a></h5>
-                                    <h3 class="mb-0 white">Indonesia</h3>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4" style="cursor: pointer">
+                    <a href="<?= URL ?>types">
+                        <div class="trend-item1 acc-typ">
+
+                            <div class="trend-image ">
+                                <img src="<?= PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
+                                <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
+                                                       <a href="<?= URL ?>types">
+
+                                    <div class="trend-content-title">
+                                        <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Italy</a></h5>
+                                        <h3 class="mb-0 white">Caspian Valley</h3>
+                                    </div>
+                                                       </a>
+                                    <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
                                 </div>
-                                <span class="white bg-theme p-1 px-2 rounded">14 Tours</span>
+                                <div class="color-overlay"></div>
                             </div>
-                            <div class="color-overlay"></div>
                         </div>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination10.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Italy</a></h5>
-                                    <h3 class="mb-0 white">Caspian Valley</h3>
-                                </div>
-                                <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
-                            </div>
-                            <div class="color-overlay"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination11.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Tokyo</a></h5>
-                                    <h3 class="mb-0 white">Japan</h3>
-                                </div>
-                                <span class="white bg-theme p-1 px-2 rounded">21 Tours</span>
-                            </div>
-                            <div class="color-overlay"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="trend-item1">
-                        <div class="trend-image position-relative rounded">
-                            <img src="<?= PUBLIC_URL; ?>images/destination/destination7.jpg" alt="image">
-                            <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100">
-                                <div class="trend-content-title">
-                                    <h5 class="mb-0"><a href="destination-detail.html" class="theme1">Moscow</a></h5>
-                                    <h3 class="mb-0 white">Russia</h3>
-                                </div>
-                                <span class="white bg-theme p-1 px-2 rounded">15 Tours</span>
-                            </div>
-                            <div class="color-overlay"></div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
