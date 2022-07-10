@@ -36,6 +36,12 @@ class Index extends Controller
 
         
     }
+    function adminIndex(){
+        $this->view->title = "Home";
+        $this->view->renderAdmin('header');
+        $this->view->renderAdmin('index/index');
+        $this->view->renderAdmin('footer');
+    }
 
     // SAMPLES
 
