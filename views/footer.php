@@ -303,6 +303,12 @@
 <script src="<?php echo PUBLIC_URL; ?>js/main.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/custom-swiper.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
+<script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
+<script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
+<!-- Axios -->
+<script src="<?php echo PUBLIC_URL; ?>_custom/axios-master/dist/axios.min.js"></script>
+<script src="<?php echo PUBLIC_URL; ?>_custom/axios-defaults.js"></script>
+<script src="<?php echo PUBLIC_URL; ?>_custom/new.js"></script>
 <script>
     
     $(".acc-typ").click(function() {

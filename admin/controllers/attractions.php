@@ -10,17 +10,16 @@ class Attractions extends Controller
     }
 
     function index()
-    {
-         
-        
-        $this->view->render('header');
+    { 
+        $this->view->title = "Home";
+        // $this->view->render('header');
+        // $this->view->render('navigation');
         $this->view->render('attractions/index');
-        $this->view->render('footer');
-       
-
+        // $this->view->render('footer');
         
     }
-   
+     
+    // SAMPLES
 
 
 }

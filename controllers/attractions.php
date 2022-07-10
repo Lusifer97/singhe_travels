@@ -19,9 +19,9 @@ class Attractions extends Controller
         // );
         // echo Cookie::set('jjjj', 'aaaaaaaa', time() + (86400 * 30), '/');
         //    echo Cookie::unset_cookie('name2','/');
-        // var_dump($_COOKIE);
+        // var_dump($this->model->getCategory());
         // $this->view->data = $this->model->selectAll();
-        // $this->view->getCategory = $this->model->getCategory();
+        $this->view->getCategory = $this->model->getCategory();
         // $this->view->getPrice = $this->model->getPrice();
         // $this->view->getCity = $this->model->getCity();
         // $this->view->popularpackages = $this->model->popularPackage();

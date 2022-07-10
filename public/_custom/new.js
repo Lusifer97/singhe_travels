@@ -1,7 +1,9 @@
+var cat = [];
+
 function addcomment(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "tours/feedbacks", formData).then(function (response) {
+    postAsync(url + "tours/feedbacks", formData).then(function(response) {
         // console.log(response.data);
 
 
@@ -13,11 +15,12 @@ function addcomment(e, form) {
         }
     });
 }
+
 function addinquery(e, form) {
     $('#contact_b').html("sending");
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "contactus/inqueries", formData).then(function (response) {
+    postAsync(url + "contactus/inqueries", formData).then(function(response) {
         // console.log(response.data);
 
 
@@ -29,13 +32,14 @@ function addinquery(e, form) {
         }
     });
 }
+
 function selectCity(data) {
     // console.log(data.value);
-    postAsync(url + "destinations/selectCity/" + data.value, null).then(function (response) {
+    postAsync(url + "destinations/selectCity/" + data.value, null).then(function(response) {
         console.log(response.data);
 
         $('#city').html('');
-        $.each(response.data, function (key, value) {
+        $.each(response.data, function(key, value) {
 
             $('#city').append(`<option value="${value.city}">${value.city}</option>`);
         });
@@ -44,11 +48,11 @@ function selectCity(data) {
 
 
     });
-    postAsync(url + "destinations/getPrice/" + data.value + "", null).then(function (response) {
+    postAsync(url + "destinations/getPrice/" + data.value + "", null).then(function(response) {
         // console.log(response.data);
 
         $('#price').html('');
-        $.each(response.data, function (key, value) {
+        $.each(response.data, function(key, value) {
 
             $('#price').append(`<option value="${value.price}">${value.price}</option>`);
         });
@@ -63,9 +67,9 @@ function selectCity(data) {
 function filterForm(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "destinations/filtter", formData).then(function (response) {
+    postAsync(url + "destinations/filtter", formData).then(function(response) {
         $('#load').html('');
-        $.each(response.data, function (key, value) {
+        $.each(response.data, function(key, value) {
             // var id = ;
             $('#load').append(`
             <div class="tourmaster-item-list tourmaster-tour-full tourmaster-item-pdlr clearfix tourmaster-tour-frame">
@@ -92,7 +96,9 @@ function filterForm(e, form) {
                                             </div>
                                             </div>
             `);
-            void function () {
+            void
+
+            function() {
 
             }
         });
@@ -103,7 +109,7 @@ function filterForm(e, form) {
 function addcommenttofeedback(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "destinations/feedback", formData).then(function (response) {
+    postAsync(url + "destinations/feedback", formData).then(function(response) {
         // console.log(response.data);
 
 
@@ -125,7 +131,7 @@ function register(e, form) {
     if (psw1 == psw2) {
         $('#contact_b').html("sending");
 
-        postAsync(url + "user/register", formData).then(function (response) {
+        postAsync(url + "user/register", formData).then(function(response) {
             // console.log(response.data);
 
 
@@ -154,7 +160,7 @@ function activateUser(e, form) {
     $('#contact_b').html("sending");
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "user/activateUser", formData).then(function (response) {
+    postAsync(url + "user/activateUser", formData).then(function(response) {
         // console.log(response.data);
 
 
@@ -172,7 +178,7 @@ function login(e, form) {
     $('#contact_b').html("sending");
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "user/makeSession", formData).then(function (response) {
+    postAsync(url + "user/makeSession", formData).then(function(response) {
         // console.log(response.data);
 
 
@@ -186,25 +192,3 @@ function login(e, form) {
         }
     });
 }
-
-$(document).ready(function () {
-    console.log(user);
-    if (user != "") {
-        $(".lo").css("display", "show");
-        $("#li").css("display", "none");
-        $("#su").css("display", "none");
-    } else {
-
-        $("#li").css("display", "show");
-        $("#su").css("display", "show");
-        $(".lo").css("display", "none");
-    }
-
-});
-
-function checkout() {
-    $("#co").css("display", "none");
-    $("#pd").css("display", "show");
-}
-
-

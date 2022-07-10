@@ -1,6 +1,6 @@
 <?php
 // import('./libs/custom/User_Login_Model');
-class Hotels_Model extends Model
+class Attractions_Model extends Model
 {
 
     function __construct()
@@ -10,8 +10,19 @@ class Hotels_Model extends Model
 
     function selectAll(){
         $result = $this->db->select([
-            'table' => 'hotels',
+            'table' => 'destinations',
             'column' => '*',
+            
+        ]);
+        return $result;
+    }
+
+    function getArticals(){
+        $result = $this->db->select([
+            'table' => 'articals',
+            'column' => '*',
+            'order' => 'id DESC',
+            'limit' => 3
             
         ]);
         return $result;
@@ -19,19 +30,9 @@ class Hotels_Model extends Model
 
     function selectOne($data){
         $result = $this->db->select([
-            'table' => ' hotels',
+            'table' => 'destinations',
             'column' => '*',
             'where' => 'id =:id',
-            'data' => ['id' => $data]
-            
-        ]);
-        return $result;
-    }
-    function selectRoom($data){
-        $result = $this->db->select([
-            'table' => ' rooms',
-            'column' => '*',
-            'where' => 'hotel_id =:id',
             'data' => ['id' => $data]
             
         ]);
@@ -40,18 +41,37 @@ class Hotels_Model extends Model
 
     function getCategory(){
         $result = $this->db->select([
-            'table' => 'destinations',
-            'column' => 'DISTINCT(categories)',
+            'table' => 'categories',
+            'column' => '*',
+            
+
+
             
             
         ]);
         return $result;
     }
 
-    function getCity(){
+    function getPrice($data){
+        $result = $this->db->select([
+            'table' => 'destinations',
+            'column' => 'DISTINCT(price)',
+            'where' => 'categories_id =:categories_id ORDER BY price DESC',
+            'data' =>['categories_id'=>$data],
+            // 'order' => 'price DESC'
+            
+            
+        ]);
+        return $result;
+    }
+
+
+    function getCity($data){
         $result = $this->db->select([
             'table' => 'destinations',
             'column' => 'DISTINCT(city)',
+            'where' => 'categories_id =:categories_id',
+            'data' =>['categories_id'=>$data]
             
             
         ]);
@@ -120,7 +140,7 @@ class Hotels_Model extends Model
         $result = $this->db->select([
             'table' => 'packages',
             'column' => '*',
-            'limit' => 3,
+            'limit' => 4,
             
         ]);
         return $result;
@@ -131,8 +151,12 @@ class Hotels_Model extends Model
         $result = $this->db->select([
             'table' => 'destinations',
             'column' => '*',
-            'where' =>'categories =:categories',
-            'data' => ['categories' => $data["cat"]],
+            'where' =>'categories_id =:categories_id AND city =:city AND price <=:price',
+            'data' => [
+                'categories_id' => $data["categories_id"],
+                'city' => $data["city"],
+                'price' => $data["price"]
+            ]
             
         ]);
         return $result;
@@ -163,24 +187,26 @@ class Hotels_Model extends Model
     }
 
     function simillar_destination($id){
-        $cat = $this->db->select([
-            'table' =>'destinations',
-            'column' =>'categories',
-            'where' => 'id =:id',
-            'data' => ['id'=>$id]
-
-        ]);
-        foreach($cat as $key => $value){
-            $cate = $value["categories"];
-        }
         $result = $this->db->select([
             'table' =>'destinations',
             'column' =>'*',
-            'where' =>'id <>:id AND categories =:categories',
-            'data' =>['categories' => $cate,'id' => $id],
-            'limit' => 3,
-        ]);
+            'where' => 'categories_id =(select categories_id from destinations where id =:id)',
+            'data' => ['id'=>$id],
+            'limit' => 2
 
+        ]);
+        
+
+        return $result;
+    }
+
+    function getFacilities($id){
+        $result = $this->db->select([
+            'table'=>'facilities',
+            'column'=>'*',
+            'where'=>'id IN(select facilities_id from facilities_in_destinations where destination_id =:destination_id)',
+            'data'=>['destination_id'=>$id]
+        ]);
         return $result;
     }
 

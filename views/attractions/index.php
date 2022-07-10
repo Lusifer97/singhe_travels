@@ -70,7 +70,7 @@
                                         <h3 class="mb-0">$125</h3>
                                         <small>Per Adult</small>
                                     </div>
-                                    <a href="<?=URL;?>attractions/details" class="nir-btn">View Detail</a>
+                                    <a href="<?= URL; ?>attractions/details" class="nir-btn">View Detail</a>
                                 </div>
                             </div>
                         </div>
@@ -302,14 +302,19 @@
                         <div class="sidebar-item mb-4">
                             <h3 class="">Categories Type</h3>
                             <ul class="sidebar-category1">
-                                <li><input type="checkbox" checked> Tours <span class="float-end">92</span></li>
-                                <li><input type="checkbox"> Attractions <span class="float-end">22</span></li>
-                                <li><input type="checkbox"> Day Trips <span class="float-end">35</span></li>
-                                <li><input type="checkbox"> Outdoor Activities <span class="float-end">41</span></li>
-                                <li><input type="checkbox"> Concert & Show <span class="float-end">11</span></li>
-                                <li><input type="checkbox"> Indoor <span class="float-end">61</span></li>
-                                <li><input type="checkbox"> Sight Seeing <span class="float-end">18</span></li>
-                                <li><input type="checkbox"> Travels <span class="float-end">88</span></li>
+                                <form>
+                                    <select>
+                                        <?php
+                                        if (!empty($this->getCategory)) {
+                                            foreach ($this->getCategory as $key => $value) {
+                                        ?>
+                                                <option value="<?= $value["id"] ?>"> <?= $value["name"] ?> </option>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                </form>
                             </ul>
                         </div>
                         <div class="sidebar-item mb-4">

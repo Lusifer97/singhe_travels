@@ -155,6 +155,13 @@ class Database extends PDO
 			$where = " LIMIT " . $data['limit'];
 		}
 
+		if (isset($data['join'])) {
+			if(isset($data['on'])){
+				$where = " INNER JOIN " . $data['join'] ." ON ".$data['on'];
+			}
+			
+		}
+
 		$query = "SELECT " . $data['column'] . " FROM " . $data['table'] . $where . ";";
 		// var_dump($query);
 
