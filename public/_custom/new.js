@@ -34,8 +34,8 @@ function addinquery(e, form) {
 }
 
 function selectCity(data) {
-    // console.log(data.value);
-    postAsync(url + "destinations/selectCity/" + data.value, null).then(function(response) {
+    console.log(data.value);
+    postAsync(url + "attractions/selectCity/" + data.value, null).then(function(response) {
         console.log(response.data);
 
         $('#city').html('');
@@ -48,7 +48,7 @@ function selectCity(data) {
 
 
     });
-    postAsync(url + "destinations/getPrice/" + data.value + "", null).then(function(response) {
+    postAsync(url + "attractions/getPrice/" + data.value + "", null).then(function(response) {
         // console.log(response.data);
 
         $('#price').html('');
@@ -67,40 +67,40 @@ function selectCity(data) {
 function filterForm(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "destinations/filtter", formData).then(function(response) {
-        $('#load').html('');
+    postAsync(url + "attractions/filtter", formData).then(function(response) {
+        $('#loadattraction').html('');
         $.each(response.data, function(key, value) {
             // var id = ;
-            $('#load').append(`
-            <div class="tourmaster-item-list tourmaster-tour-full tourmaster-item-pdlr clearfix tourmaster-tour-frame">
-            <div style="box-shadow: 5px 10px 8px 10px #888888;">
-                                                <div class="tourmaster-tour-thumbnail tourmaster-media-image">
-                                                    <a href="${url}destinations/details/${value.id}"><img src="${PUBLIC_URL}images/destination/${value.image}" alt="" width="1280" height="580" /></a>
-                                                </div>
-                                                <div class="tourmaster-tour-content-wrap clearfix gdlr-core-skin-e-background">
-                                                    <div class="tourmaster-content-left">
-                                                        <h3 class="tourmaster-tour-title gdlr-core-skin-title"><a href="${url}destinations/details/${value.id}">${value.name}</a></h3>
-                                                        <div class="tourmaster-tour-info-wrap clearfix">
-                                                            <div class="tourmaster-tour-info tourmaster-tour-info-duration-text "><i class="icon_clock_alt"></i>${value.duration}</div>
-                                                            <div class="tourmaster-tour-info tourmaster-tour-info-availability "><i class="fa fa-calendar"></i>Availability : Jan 16’ - Dec 16’</div>
-                                                            <div class="tourmaster-tour-info tourmaster-tour-info-departure-location "><i class="flaticon-takeoff-the-plane"></i>${value.city}</div>
-                                                        </div>
-                                                        <div class="tourmaster-tour-content">${value.short_description}</div>
-                                                    </div>
-                                                    <div class="tourmaster-content-right tourmaster-center-tour-content">
-                                                        <div class="tourmaster-tour-price-wrap "><span class="tourmaster-tour-price"><span class="tourmaster-head">From</span><span class="tourmaster-tail">$${value.price}</span></span>
-                                                        </div>
-                                                        <div class="tourmaster-tour-rating tourmaster-tour-rating-empty">0</div><a class="tourmaster-tour-view-more" href="${url}destinations/details/${value.id}">View Details</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-            `);
-            void
+            $('#loadattraction').append(`<div class="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <div class="trend-item2 rounded">
+                        <a href="tour-single.html" style="background-image: url(${PUBLIC_URL}images/destination/destination17.jpg);"></a>
+                        <div class="color-overlay"></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="trend-content position-relative text-md-start text-center">
+                        <small>${value.duration} Days</small>
+                        <h3 class="mb-1"><a href="tour-single.html">${value.name}</a></h3>
+                        <h6 class="theme mb-0"><i class="icon-location-pin"></i> ${value.city}</h6>
+                        <p class="mt-4 mb-0">${value.distance} Km<br><a href="#"><span class="theme"> Free cancellation</span></a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="trend-content text-md-end text-center">
+                         <br><br>
+                        <div class="trend-price my-2">
+                            <span class="mb-0">From</span>
+                            <h3 class="mb-0">$${value.price}</h3>
+                            <small>Per Adult</small>
+                        </div>
+                        <a href="${url}attractions/details" class="nir-btn">View Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>`);
 
-            function() {
-
-            }
         });
 
     });
@@ -191,4 +191,90 @@ function login(e, form) {
             $(form).trigger('reset');
         }
     });
+}
+
+function loadmore() {
+
+    postAsync(url + "attractions/selectAll", null).then(function(response) {
+        $('#loadattraction').html('');
+        $('#all').html('All');
+        $.each(response.data, function(key, value) {
+
+            $('#loadattraction').append(`<div class="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <div class="trend-item2 rounded">
+                        <a href="tour-single.html" style="background-image: url(${PUBLIC_URL}images/destination/destination17.jpg);"></a>
+                        <div class="color-overlay"></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="trend-content position-relative text-md-start text-center">
+                        <small>${value.duration} Days</small>
+                        <h3 class="mb-1"><a href="tour-single.html">${value.name}</a></h3>
+                        <h6 class="theme mb-0"><i class="icon-location-pin"></i> ${value.city}</h6>
+                        <p class="mt-4 mb-0">${value.distance} Km<br><a href="#"><span class="theme"> Free cancellation</span></a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="trend-content text-md-end text-center">
+                         <br><br>
+                        <div class="trend-price my-2">
+                            <span class="mb-0">From</span>
+                            <h3 class="mb-0">$${value.price}</h3>
+                            <small>Per Adult</small>
+                        </div>
+                        <a href="${url}attractions/details" class="nir-btn">View Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+
+        });
+
+    });
+
+}
+
+function loadless() {
+
+    postAsync(url + "attractions/selectFive", null).then(function(response) {
+        $('#loadattraction').html('');
+        $('#all').html('1-5');
+        $.each(response.data, function(key, value) {
+
+            $('#loadattraction').append(`<div class="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-3">
+                    <div class="trend-item2 rounded">
+                        <a href="tour-single.html" style="background-image: url(${PUBLIC_URL}images/destination/destination17.jpg);"></a>
+                        <div class="color-overlay"></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="trend-content position-relative text-md-start text-center">
+                        <small>${value.duration} Days</small>
+                        <h3 class="mb-1"><a href="tour-single.html">${value.name}</a></h3>
+                        <h6 class="theme mb-0"><i class="icon-location-pin"></i> ${value.city}</h6>
+                        <p class="mt-4 mb-0">${value.distance} Km<br><a href="#"><span class="theme"> Free cancellation</span></a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="trend-content text-md-end text-center">
+                         <br><br>
+                        <div class="trend-price my-2">
+                            <span class="mb-0">From</span>
+                            <h3 class="mb-0">$${value.price}</h3>
+                            <small>Per Adult</small>
+                        </div>
+                        <a href="${url}attractions/details" class="nir-btn">View Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+
+        });
+
+    });
+
 }

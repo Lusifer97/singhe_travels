@@ -22,9 +22,9 @@ class Attractions extends Controller
         // var_dump($this->model->getCategory());
         // $this->view->data = $this->model->selectAll();
         $this->view->getCategory = $this->model->getCategory();
-        // $this->view->getPrice = $this->model->getPrice();
-        // $this->view->getCity = $this->model->getCity();
-        // $this->view->popularpackages = $this->model->popularPackage();
+        $this->view->count = $this->model->count();
+        $this->view->selectFive = $this->model->selectFive();
+        $this->view->popularDestinations = $this->model->popularDestinations();
         // $this->view->articals = $this->model->getArticals();
         $this->view->title = "Magical Destinations";
         $this->view->render('header');
@@ -73,6 +73,14 @@ class Attractions extends Controller
         }else{
             echo json_encode(['status'=>false]);
         }
+    }
+
+    function selectAll(){
+        echo json_encode($this->model->selectAll());
+    }
+
+    function selectFive(){
+        echo json_encode($this->model->selectFive());
     }
 
     // SAMPLES
