@@ -17,6 +17,24 @@ class Attractions_Model extends Model
         return $result;
     }
 
+    function selectFive(){
+        $result = $this->db->select([
+            'table' => 'destinations',
+            'column' => '*',
+            'limit' => 5
+            
+        ]);
+        return $result;
+    }
+    function count(){
+        $result = $this->db->select([
+            'table' => 'destinations',
+            'column' => 'COUNT(id)',
+            
+        ]);
+        return $result;
+    }
+
     function getArticals(){
         $result = $this->db->select([
             'table' => 'articals',
@@ -136,11 +154,12 @@ class Attractions_Model extends Model
         return $result;
     }
 
-    function popularPackage(){
+    function popularDestinations(){
         $result = $this->db->select([
-            'table' => 'packages',
+            'table' => 'destinations',
             'column' => '*',
-            'limit' => 4,
+            'where' =>'status =:status',
+            'data' =>['status' => 1]
             
         ]);
         return $result;
