@@ -63,7 +63,7 @@
                                                 <h3 class="mb-0">$<?=$value["price"];?></h3>
                                                 <small>Per Adult</small>
                                             </div>
-                                            <a href="<?= URL; ?>attractions/details" class="nir-btn">View Detail</a>
+                                            <a href="<?= URL; ?>attractions/details/<?=$value["id"];?>" class="nir-btn">View Detail</a>
                                         </div>
                                     </div>
                                 </div>

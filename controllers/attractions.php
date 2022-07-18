@@ -37,16 +37,17 @@ class Attractions extends Controller
 
     }
 
-    function details()
+    function details($id)
     {
         // $id = base64_decode($id);
-        // $this->view->data = $this->model->selectOne($id);
-        // $this->view->plan = $this->model->getPlan($id);
-        // $this->view->photos = $this->model->getPhotos($id);
-        // $this->view->getFeedback = $this->model->getFeedback($id);
+        $this->view->data = $this->model->selectOne($id);
+        $this->view->plan = $this->model->getPlan($id);
+        $this->view->photos = $this->model->getPhotos($id);
+        $this->view->getFeedback = $this->model->getFeedback($id);
+        $this->view->count = $this->model->getFeedbackCount($id);
         // $this->view->simillar_destination = $this->model->simillar_destination($id);
-        // $this->view->facilities = $this->model->getFacilities($id);
-        $this->view->title = "Destination Details";
+        $this->view->facilities = $this->model->getFacilities($id);
+        $this->view->title = "Attraction Details";
         $this->view->render('header');
         $this->view->render('navigation');
         $this->view->render('attractions/details');

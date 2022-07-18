@@ -95,7 +95,7 @@ function filterForm(e, form) {
                             <h3 class="mb-0">$${value.price}</h3>
                             <small>Per Adult</small>
                         </div>
-                        <a href="${url}attractions/details" class="nir-btn">View Detail</a>
+                        <a href="${url}attractions/details/${value.id}" class="nir-btn">View Detail</a>
                     </div>
                 </div>
             </div>
@@ -109,12 +109,12 @@ function filterForm(e, form) {
 function addcommenttofeedback(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "destinations/feedback", formData).then(function(response) {
+    postAsync(url + "attractions/feedback", formData).then(function(response) {
         // console.log(response.data);
 
 
         if (response.data.status == true) {
-            alert('Thank You for Your Valuable comment');
+            alert('Thank You for Your Valuable comment.Your comment will be appier after administrator review..');
             $(form).trigger('reset');
             location.reload();
 
@@ -224,7 +224,7 @@ function loadmore() {
                             <h3 class="mb-0">$${value.price}</h3>
                             <small>Per Adult</small>
                         </div>
-                        <a href="${url}attractions/details" class="nir-btn">View Detail</a>
+                        <a href="${url}attractions/details/${value.id}" class="nir-btn">View Detail</a>
                     </div>
                 </div>
             </div>
@@ -267,7 +267,7 @@ function loadless() {
                             <h3 class="mb-0">$${value.price}</h3>
                             <small>Per Adult</small>
                         </div>
-                        <a href="${url}attractions/details" class="nir-btn">View Detail</a>
+                        <a href="${url}attractions/details/${value.id}" class="nir-btn">View Detail</a>
                     </div>
                 </div>
             </div>
