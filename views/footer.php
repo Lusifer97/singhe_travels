@@ -305,6 +305,7 @@
 <script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
+<script src="<?php echo PUBLIC_URL; ?>js/custom-accordian.js"></script>
 <!-- Axios -->
 <script src="<?php echo PUBLIC_URL; ?>_custom/axios-master/dist/axios.min.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>_custom/axios-defaults.js"></script>

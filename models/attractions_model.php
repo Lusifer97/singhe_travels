@@ -147,6 +147,18 @@ class Attractions_Model extends Model
         $result = $this->db->select([
             'table' => 'feedback',
             'column' => '*',
+            'where' => 'status =:status AND destination_id =:destination_id ORDER BY id DESC LIMIT 2',
+            'data' => ['status'=>1,'destination_id'=>$id],
+            
+            
+        ]);
+        return $result;
+    }
+
+    function getFeedbackCount($id){
+        $result = $this->db->select([
+            'table' => 'feedback',
+            'column' => 'COUNT(id)',
             'where' => 'status =:status AND destination_id =:destination_id',
             'data' => ['status'=>1,'destination_id'=>$id]
             
