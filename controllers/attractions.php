@@ -45,7 +45,7 @@ class Attractions extends Controller
         $this->view->photos = $this->model->getPhotos($id);
         $this->view->getFeedback = $this->model->getFeedback($id);
         $this->view->count = $this->model->getFeedbackCount($id);
-        // $this->view->simillar_destination = $this->model->simillar_destination($id);
+        $this->view->popularDestinations = $this->model->popularDestinations();
         $this->view->facilities = $this->model->getFacilities($id);
         $this->view->title = "Attraction Details";
         $this->view->render('header');

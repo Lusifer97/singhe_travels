@@ -33,7 +33,13 @@
                                     <div class="rating-main d-lg-flex align-items-center text-lg-start text-center">
                                         <p class="mb-0 me-2"><i class="icon-location-pin"></i> <?= $value["city"]; ?>, Sri Lanka</p>
 
-                                        <span>(1,186 Reviews)</span>
+                                        <span>(<?php
+                                                if (!empty($this->count)) {
+                                                    foreach ($this->count as $key => $value) {
+                                                        echo $value["COUNT(id)"];
+                                                    }
+                                                }
+                                                ?> Reviews)</span>
                                     </div>
                                 </div>
                             </div>
@@ -161,13 +167,13 @@
 
 
                     <div class="single-comments single-box mb-4">
-                        <h5 class="border-b pb-2 mb-2">Showing 2 - <?php 
-                        if(!empty($this->count)){
-                            foreach($this->count as $key=>$value){
-                                echo $value["COUNT(id)"];
-                            }
-                        }
-                        ?> guest comments</h5>
+                        <h5 class="border-b pb-2 mb-2">Showing 2 - <?php
+                                                                    if (!empty($this->count)) {
+                                                                        foreach ($this->count as $key => $value) {
+                                                                            echo $value["COUNT(id)"];
+                                                                        }
+                                                                    }
+                                                                    ?> guest comments</h5>
                         <?php
                         if (!empty($this->getFeedback)) {
                             foreach ($this->getFeedback as $key => $value) {
@@ -177,13 +183,13 @@
                                         <img src="<?php echo PUBLIC_URL; ?>images/reviewer/1.jpg" alt="image">
                                     </div>
                                     <div class="comment-content rounded">
-                                        <h5 class="mb-1"><?=$value["name"];?></h5>
-                                        <p class="comment-date"><?=$value["date"];?></p>
+                                        <h5 class="mb-1"><?= $value["name"]; ?></h5>
+                                        <p class="comment-date"><?= $value["date"]; ?></p>
                                         <div class="comment-rate">
 
-                                            <span class="comment-title"><?=$value["email"];?></span>
+                                            <span class="comment-title"><?= $value["email"]; ?></span>
                                         </div>
-                                        <p class="comment"><?=$value["feedback"];?></p>
+                                        <p class="comment"><?= $value["feedback"]; ?></p>
 
                                     </div>
                                 </div>
@@ -201,12 +207,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group mb-2">
-                                        <?php 
-                                        if(!empty($this->data)){
-                                            foreach($this->data as $value){
-                                                ?>
-                                                <input type="hidden" name="d_id" value="<?=$value["id"];?>">
-                                                <?php
+                                        <?php
+                                        if (!empty($this->data)) {
+                                            foreach ($this->data as $value) {
+                                        ?>
+                                                <input type="hidden" name="d_id" value="<?= $value["id"]; ?>">
+                                        <?php
                                             }
                                         }
                                         ?>
@@ -225,7 +231,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-btn">
-                                        
+
                                         <input type="submit" value="Submit Review" class="nir-btn">
                                     </div>
                                 </div>
@@ -286,41 +292,36 @@
                                 </div>
                             </form>
                         </div>
-                         
+
                         <div class="sidebar-item">
                             <h3>Related Explorations</h3>
                             <div class="sidebar-destination">
                                 <div class="row about-slider">
-                                    <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                                        <div class="trend-item1">
-                                            <div class="trend-image position-relative rounded">
-                                                <img src="<?php echo PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
-                                                <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                                    <div class="trend-content-title">
-                                                        <h5 class="mb-0"><a href="grid-leftfilter.html/index.html" class="theme1">Italy</a></h5>
-                                                        <h4 class="mb-0 white">Caspian Valley</h4>
+                                    <?php
+                                    if (!empty($this->popularDestinations)) {
+                                        foreach ($this->popularDestinations as $key => $value) {
+                                    ?>
+                                            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                                                <div class="trend-item1">
+                                                    <div class="trend-image position-relative rounded">
+                                                        <img src="<?php echo PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
+                                                        <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
+                                                            <div class="trend-content-title">
+                                                                <h5 class="mb-0"><a href="grid-leftfilter.html/index.html" class="theme1"><?= $value["city"]; ?></a></h5>
+                                                                <h4 class="mb-0 white"><?= $value["name"]; ?></h4>
+                                                            </div>
+                                                            <span class="white bg-theme p-1 px-2 rounded">$<?= $value["price"]; ?></span>
+                                                        </div>
+                                                        <div class="color-overlay"></div>
                                                     </div>
-                                                    <span class="white bg-theme p-1 px-2 rounded">18 Tours</span>
                                                 </div>
-                                                <div class="color-overlay"></div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
-                                        <div class="trend-item1">
-                                            <div class="trend-image position-relative rounded">
-                                                <img src="<?php echo PUBLIC_URL; ?>images/destination/destination14.jpg" alt="image">
-                                                <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
-                                                    <div class="trend-content-title">
-                                                        <h5 class="mb-0"><a href="grid-leftfilter.html/index.html" class="theme1">Tokyo</a></h5>
-                                                        <h4 class="mb-0 white">Japan</h4>
-                                                    </div>
-                                                    <span class="white bg-theme p-1 px-2 rounded">21 Tours</span>
-                                                </div>
-                                                <div class="color-overlay"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+
+
                                 </div>
                             </div>
                         </div>
@@ -332,7 +333,7 @@
 </section>
 
 
-<section class="discount-action pt-0" style="background-image:url(<?= PUBLIC_URL;?>images/section-bg1.png); background-position:center;">
+<section class="discount-action pt-0" style="background-image:url(<?= PUBLIC_URL; ?>images/section-bg1.png); background-position:center;">
     <div class="container">
         <div class="call-banner rounded pt-10 pb-14">
             <div class="call-banner-inner w-75 mx-auto text-center px-5">
@@ -345,10 +346,12 @@
                     <div class="video-button text-center position-relative">
                         <div class="call-button text-center">
                             <button type="button" class="play-btn js-video-button" data-video-id="152879427" data-channel="vimeo">
-                                <i class="fa fa-play bg-blue"></i>
+                                <a href="https://www.youtube.com/embed/q0mbKsKG-ng?autoplay=1">
+                                    <i class="fa fa-play bg-blue"></i>
+                                </a>
                             </button>
                         </div>
-                        <div class="video-figure"></div>
+
                     </div>
                 </div>
             </div>
@@ -356,8 +359,5 @@
     </div>
     <div class="white-overlay"></div>
     <div class="white-overlay"></div>
-    <div class="section-shape  top-inherit bottom-0" style="background-image: url(images/shape6.png);"></div>
+    <div class="section-shape  top-inherit bottom-0" style="background-image: url(<?= PUBLIC_URL; ?>images/shape6.png);margin-bottom: -1%;"></div>
 </section>
-
-
- 
