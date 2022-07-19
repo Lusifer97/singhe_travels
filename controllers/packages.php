@@ -12,8 +12,10 @@ class Packages extends Controller
     function index()
     {
 //
-        $this->view->data = $this->model->selectAll();
-//        $this->view->getStatus = $this->model->getStatus();
+        $this->view->getCategory = $this->model->getCategory();
+        $this->view->popularPackages = $this->model->popularPackages();
+        $this->view->count = $this->model->count();
+        $this->view->data = $this->model->selectSix();
         $this->view->title = "Best Tour Collections";
         $this->view->render('header');
         $this->view->render('navigation');
@@ -25,11 +27,11 @@ class Packages extends Controller
         
     }
 
-    function details(){
-//        $id = base64_decode($id);
+    function details($id){
+       $id = base64_decode($id);
          
          
-//        $this->view->data = $this->model->selectOne($id);
+       $this->view->data = $this->model->selectOne($id);
 //        $this->view->destinations = $this->model->getTours($id);
 //        $this->view->facilities = $this->model->getfacilities($id);
 //        $this->view->plan = $this->model->getPlan($id);
@@ -53,6 +55,19 @@ class Packages extends Controller
         }
             
         
+    }
+
+    function selectAll(){
+        echo json_encode($this->model->selectAll());
+    }
+
+    function selectSix(){
+        echo json_encode($this->model->selectSix());
+    }
+
+    function filtter()
+    {
+        echo json_encode($this->model->filtter($_POST));
     }
 
     // SAMPLES

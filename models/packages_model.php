@@ -17,6 +17,49 @@ class Packages_Model extends Model
         return $result;
     }
 
+    function selectSix(){
+        $result = $this->db->select([
+            'table' => 'packages',
+            'column' => '*',
+            'limit' => 6
+            
+        ]);
+        return $result;
+    }
+
+    function filtter($data){
+        
+        $result = $this->db->select([
+            'table' => 'packages',
+            'column' => '*',
+            'where' =>'categories_id =:categories_id AND status =:status',
+            'data' => [
+                'categories_id' => $data["categories_id"],
+                'status' => $data["status"]
+            ]
+            
+        ]);
+        return $result;
+    }
+
+    function count(){
+        $result = $this->db->select([
+            'table' => 'packages',
+            'column' => 'COUNT(id)',
+            
+        ]);
+        return $result;
+    }
+
+    function getCategory(){
+        $result = $this->db->select([
+            'table' => 'categories',
+            'column' => '*',
+            
+        ]);
+        return $result;
+    }
+
     function getStatus(){
         $result = $this->db->select([
             'table' => 'packages',
@@ -121,11 +164,12 @@ class Packages_Model extends Model
         return $result;
     }
 
-    function popularPackage(){
+    function popularPackages(){
         $result = $this->db->select([
-            'table' => 'packages',
+            'table' => 'destinations',
             'column' => '*',
-            'limit' => 2,
+            'where' => 'status =:status',
+            'data' => ['status'=>1]
             
         ]);
         return $result;
