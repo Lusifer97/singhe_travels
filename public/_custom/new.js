@@ -276,3 +276,167 @@ function loadless() {
     });
 
 }
+
+function loadm() {
+
+    postAsync(url + "packages/selectAll", null).then(function(response) {
+
+        $('#loadpackages').html('');
+        $('#pall').html('All');
+        $.each(response.data, function(key, value) {
+
+            $('#loadpackages').append(`<div  class="col-lg-6 col-md-6 mb-4 mainp">
+            <div class="trend-item rounded box-shadow">
+                <a href="${url}packages/details/${btoa(value.id)}">
+                    <div class="trend-image position-relative">
+                        <img src="${PUBLIC_URL}images/trending/trending2.jpg" alt="image" class="">
+                        <div class="color-overlay"></div>
+                    </div>
+                    <div class="trend-content p-4 pt-5 position-relative">
+                        <div class="trend-meta bg-theme white px-3 py-2 rounded">
+                            <div class="entry-author">
+                                <i class="icon-calendar"></i>
+                                <span class="fw-bold"> ${value.duration} Days Tours</span>
+                            </div>
+                        </div>
+                        <h5 class="theme mb-1"><i class="flaticon-location-pin"></i> ${value.status}</h5>
+                        <h3 class="mb-1"><a href="${url}packages/details/${btoa(value.id)}">${value.name}</a></h3>
+
+                        <p class=" border-b pb-2 mb-2">${value.description.substr(0,60)}..</p>
+                        <div class="entry-meta">
+                            <div class="entry-author d-flex align-items-center">
+                                <p class="mb-0"><span class="theme fw-bold fs-5"> $${value.price}.00</span> | Per person</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>`);
+
+        });
+        $('#loadpackages').append(`<div class="col-lg-12">
+        <div class="text-center">
+
+            <button id="ls" onclick="loadl()" class="nir-btn"><i class="fa fa-long-arrow-alt-left"></i> Load Less </button>
+            <button id="lm" onclick="loadm()" class="nir-btn">Load More <i class="fa fa-long-arrow-alt-right"></i></button>
+
+        </div>
+    </div>`);
+
+    });
+
+}
+
+function loadl() {
+
+    postAsync(url + "packages/selectSix", null).then(function(response) {
+
+        $('#loadpackages').html('');
+        $('#pall').html('1-6');
+        $.each(response.data, function(key, value) {
+
+            $('#loadpackages').append(`<div  class="col-lg-6 col-md-6 mb-4 mainp">
+            <div class="trend-item rounded box-shadow">
+                <a href="${url}packages/details/${btoa(value.id)}">
+                    <div class="trend-image position-relative">
+                        <img src="${PUBLIC_URL}images/trending/trending2.jpg" alt="image" class="">
+                        <div class="color-overlay"></div>
+                    </div>
+                    <div class="trend-content p-4 pt-5 position-relative">
+                        <div class="trend-meta bg-theme white px-3 py-2 rounded">
+                            <div class="entry-author">
+                                <i class="icon-calendar"></i>
+                                <span class="fw-bold"> ${value.duration} Days Tours</span>
+                            </div>
+                        </div>
+                        <h5 class="theme mb-1"><i class="flaticon-location-pin"></i> ${value.status}</h5>
+                        <h3 class="mb-1"><a href="${url}packages/details/${btoa(value.id)}">${value.name}</a></h3>
+
+                        <p class=" border-b pb-2 mb-2">${value.description.substr(0,60)}..</p>
+                        <div class="entry-meta">
+                            <div class="entry-author d-flex align-items-center">
+                                <p class="mb-0"><span class="theme fw-bold fs-5"> $${value.price}.00</span> | Per person</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>`);
+
+        });
+        $('#loadpackages').append(`<div class="col-lg-12">
+        <div class="text-center">
+
+            <button id="ls" onclick="loadl()" class="nir-btn"><i class="fa fa-long-arrow-alt-left"></i> Load Less </button>
+            <button id="lm" onclick="loadm()" class="nir-btn">Load More <i class="fa fa-long-arrow-alt-right"></i></button>
+
+        </div>
+    </div>`);
+
+    });
+
+}
+
+function packageFilterForm(e, form) {
+    e.preventDefault();
+    var formData = new FormData(form);
+    postAsync(url + "packages/filtter", formData).then(function(response) {
+        $('#loadpackages').html('');
+        if (response.data == "") {
+            $('#pall').html('No data');
+            $('#loadpackages').append(`<div class="alert alert-info p5" role="alert" style="padding: 3%;color: #000;">
+            <h4 class="alert-heading">Something Went Wrong!</h4>
+            <p>Most probably there are no packages in that category under package status that you are selected..please try again
+            selecting different category or status.</p>
+            <hr>
+            <p class="mb-0">Singhe Travels - Sri Lanka</p>
+          </div>`);
+
+        } else {
+
+            $.each(response.data, function(key, value) {
+                // var id = ;
+                $('#pall').html(value.status);
+                $('#loadpackages').append(`<div  class="col-lg-6 col-md-6 mb-4 mainp">
+                <div class="trend-item rounded box-shadow">
+                    <a href="${url}packages/details/${btoa(value.id)}">
+                        <div class="trend-image position-relative">
+                            <img src="${PUBLIC_URL}images/trending/trending2.jpg" alt="image" class="">
+                            <div class="color-overlay"></div>
+                        </div>
+                        <div class="trend-content p-4 pt-5 position-relative">
+                            <div class="trend-meta bg-theme white px-3 py-2 rounded">
+                                <div class="entry-author">
+                                    <i class="icon-calendar"></i>
+                                    <span class="fw-bold"> ${value.duration} Days Tours</span>
+                                </div>
+                            </div>
+                            <h5 class="theme mb-1"><i class="flaticon-location-pin"></i> ${value.status}</h5>
+                            <h3 class="mb-1"><a href="${url}packages/details/${btoa(value.id)}">${value.name}</a></h3>
+    
+                            <p class=" border-b pb-2 mb-2">${value.description.substr(0,60)}..</p>
+                            <div class="entry-meta">
+                                <div class="entry-author d-flex align-items-center">
+                                    <p class="mb-0"><span class="theme fw-bold fs-5"> $${value.price}.00</span> | Per person</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>`);
+
+            });
+            $('#loadpackages').append(`<div class="col-lg-12">
+        <div class="text-center">
+
+            <button id="ls" onclick="loadl()" class="nir-btn"><i class="fa fa-long-arrow-alt-left"></i> Load Less </button>
+            <button id="lm" onclick="loadm()" class="nir-btn">Load More <i class="fa fa-long-arrow-alt-right"></i></button>
+
+        </div>
+    </div>`);
+        }
+
+
+
+    });
+}

@@ -24,61 +24,61 @@
                 <div class="list-results d-flex align-items-center justify-content-between">
                     <div class="list-results-sort">
                         <p class="m-0">Showing <span id="all">1-5</span> of <?php
-                                                        if (!empty($this->count)) {
-                                                            foreach ($this->count as $key => $value) {
-                                                                echo $value["COUNT(id)"];
-                                                            }
-                                                        }
-                                                        ?> results</p>
+                                                                            if (!empty($this->count)) {
+                                                                                foreach ($this->count as $key => $value) {
+                                                                                    echo $value["COUNT(id)"];
+                                                                                }
+                                                                            }
+                                                                            ?> results</p>
                     </div>
 
                 </div>
                 <div class="destination-list">
                     <div id="loadattraction">
-                    <?php
-                    if (!empty($this->selectFive)) {
-                        foreach ($this->selectFive as $key => $value) {
-                    ?>
-                            <div class="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-3">
-                                        <div class="trend-item2 rounded">
-                                            <a href="tour-single.html" style="background-image: url(<?= PUBLIC_URL; ?>images/destination/destination17.jpg);"></a>
-                                            <div class="color-overlay"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="trend-content position-relative text-md-start text-center">
-                                            <small><?=$value["duration"];?> Days</small>
-                                            <h3 class="mb-1"><a href="tour-single.html"><?=$value["name"];?></a></h3>
-                                            <h6 class="theme mb-0"><i class="icon-location-pin"></i> <?=$value["city"];?></h6>
-                                            <p class="mt-4 mb-0"><?=$value["distance"];?> Km<br><a href="#"><span class="theme"> Free cancellation</span></a></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3">
-                                        <div class="trend-content text-md-end text-center">
-                                             <br><br>
-                                            <div class="trend-price my-2">
-                                                <span class="mb-0">From</span>
-                                                <h3 class="mb-0">$<?=$value["price"];?></h3>
-                                                <small>Per Adult</small>
+                        <?php
+                        if (!empty($this->selectFive)) {
+                            foreach ($this->selectFive as $key => $value) {
+                        ?>
+                                <div class="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-3">
+                                            <div class="trend-item2 rounded">
+                                                <a href="tour-single.html" style="background-image: url(<?= PUBLIC_URL; ?>images/destination/destination17.jpg);"></a>
+                                                <div class="color-overlay"></div>
                                             </div>
-                                            <a href="<?= URL; ?>attractions/details/<?=$value["id"];?>" class="nir-btn">View Detail</a>
+                                        </div>
+                                        <div class="col-lg-5 col-md-6">
+                                            <div class="trend-content position-relative text-md-start text-center">
+                                                <small><?= $value["duration"]; ?> Days</small>
+                                                <h3 class="mb-1"><a href="tour-single.html"><?= $value["name"]; ?></a></h3>
+                                                <h6 class="theme mb-0"><i class="icon-location-pin"></i> <?= $value["city"]; ?></h6>
+                                                <p class="mt-4 mb-0"><?= $value["distance"]; ?> Km<br><a href="#"><span class="theme"> Free cancellation</span></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3">
+                                            <div class="trend-content text-md-end text-center">
+                                                <br><br>
+                                                <div class="trend-price my-2">
+                                                    <span class="mb-0">From</span>
+                                                    <h3 class="mb-0">$<?= $value["price"]; ?></h3>
+                                                    <small>Per Adult</small>
+                                                </div>
+                                                <a href="<?= URL; ?>attractions/details/<?= $value["id"]; ?>" class="nir-btn">View Detail</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                    <?php
+                        <?php
+                            }
                         }
-                    }
-                    ?>
+                        ?>
                     </div>
 
-                    <div class="text-center" >
-                        
-                    <button id="ls" onclick="loadless()" class="nir-btn"><i class="fa fa-long-arrow-alt-left"></i> Load Less </button>
+                    <div class="text-center">
+
+                        <button id="ls" onclick="loadless()" class="nir-btn"><i class="fa fa-long-arrow-alt-left"></i> Load Less </button>
                         <button id="lm" onclick="loadmore()" class="nir-btn">Load More <i class="fa fa-long-arrow-alt-right"></i></button>
-                    
+
                     </div>
                 </div>
             </div>
