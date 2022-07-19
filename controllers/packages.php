@@ -32,11 +32,11 @@ class Packages extends Controller
          
          
        $this->view->data = $this->model->selectOne($id);
-//        $this->view->destinations = $this->model->getTours($id);
-//        $this->view->facilities = $this->model->getfacilities($id);
-//        $this->view->plan = $this->model->getPlan($id);
-//        $this->view->photos = $this->model->getPhotos($id);
-//        $this->view->simillarPackages = $this->model->simillarPackages($id);
+       $this->view->destinations = $this->model->getTours($id);
+       $this->view->facilities = $this->model->getfacilities($id);
+       $this->view->plan = $this->model->getPlan($id);
+       $this->view->photos = $this->model->getPhotos($id);
+       $this->view->simillarPackages = $this->model->simillarPackages($id);
 //        // $this->view->popularPackage = $this->model->popularPackage();
 //        $this->view->feedback = $this->model->getFeedback($id);
         $this->view->title = "Package Details";
