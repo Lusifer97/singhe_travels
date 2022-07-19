@@ -107,9 +107,8 @@ class Packages_Model extends Model
         $result = $this->db->select([
             'table' => 'packages',
             'column' => '*',
-            'where' => 'status =(select status from packages where id =:p_id)',
+            'where' => 'status =(select status from packages where id =:p_id) ORDER BY id DESC',
             'data' =>['p_id'=>$id],
-            'limit' => 2
         ]);
 
         return $result;
