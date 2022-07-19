@@ -294,8 +294,11 @@
     </div>
 </div>
 
+<script src="<?php echo PUBLIC_URL; ?>_custom/axios-master/dist/axios.min.js"></script>
+<script src="<?php echo PUBLIC_URL; ?>_custom/axios-defaults.js"></script>
+<script src="<?php echo PUBLIC_URL; ?>_custom/new.js"></script>
 <script data-cfasync="false" src="<?php echo PUBLIC_URL; ?>js/email-decode.min.js"></script>
-<script src="<?php echo PUBLIC_URL; ?>js/jquery-3.5.1.min.js"></script>
+
 <script src="<?php echo PUBLIC_URL; ?>js/bootstrap.min.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/particles.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/particlerun.js"></script>
@@ -306,11 +309,8 @@
 <script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/custom-nav.js"></script>
 <script src="<?php echo PUBLIC_URL; ?>js/custom-accordian.js"></script>
-<!-- Axios -->
-<script src="<?php echo PUBLIC_URL; ?>_custom/axios-master/dist/axios.min.js"></script>
-<script src="<?php echo PUBLIC_URL; ?>_custom/axios-defaults.js"></script>
-<script src="<?php echo PUBLIC_URL; ?>_custom/new.js"></script>
-<script>
+
+<!-- <script>
     
     $(".acc-typ").click(function() {
        window.location.replace(url+"accommodations/types")
@@ -347,7 +347,7 @@
             };
         }
     })();
-</script>
+</script> -->
 </body>
 
 

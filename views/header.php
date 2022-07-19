@@ -18,11 +18,15 @@
     <link rel="stylesheet" href="<?php echo PUBLIC_URL; ?>css/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo PUBLIC_URL; ?>css/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="<?php echo PUBLIC_URL; ?>fonts/line-icons.css" type="text/css">
+    <script src="<?php echo PUBLIC_URL; ?>js/jquery-3.5.1.min.js"></script>
     <script>
         var url = '<?= URL; ?>';
         var PUBLIC_URL = '<?= PUBLIC_URL; ?>';
         // var user = '<?= Session::get("user"); ?>';
     </script>
+    <!-- Axios -->
+
+
 </head>
 
 <body>

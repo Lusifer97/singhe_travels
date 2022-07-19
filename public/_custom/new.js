@@ -1,5 +1,3 @@
-var cat = [];
-
 function addcomment(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
