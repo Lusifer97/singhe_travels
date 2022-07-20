@@ -7,7 +7,7 @@
                 <nav aria-label="breadcrumb" class="d-block">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Albums</li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $this->title; ?></li>
                     </ul>
                 </nav>
             </div>
@@ -25,141 +25,29 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
         </div>
         <div class="row blog-main">
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending3.jpg" alt="image">
-                        <div class="overlay"></div>
+            <?php
+            if (!empty($this->albums)) {
+                foreach ($this->albums as $key => $value) {
+            ?>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
+                        <div class="gallery-item mb-4 rounded overflow-hidden">
+                            <div class="gallery-image">
+                                <img src="<?= PUBLIC_URL; ?>images/trending/<?= $value["image"]; ?>" alt="image">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="gallery-content">
+                                <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100"><?= $value["title"]; ?></h5>
+                                <ul>
+                                    <li><a href="<?= PUBLIC_URL; ?>images/trending/<?= $value["image"]; ?>" data-lightbox="gallery" data-title="<?= $value["title"]; ?>"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="<?= URL; ?>memories/images/<?=base64_encode($value["id"]);?>"><i class="fa fa-link"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Barcelona - Spain</h5>
-                        <ul>
-                            <li><a href="<?= PUBLIC_URL; ?>images/trending/trending3.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="<?= URL; ?>memories/images"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/destination/destination10.jpg" alt="image">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Moscow - Russia</h5>
-                        <ul>
-                            <li><a href="images/trending/trending10.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending2.jpg" alt="image">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Bangkok - Thailand</h5>
-                        <ul>
-                            <li><a href="images/trending/trending2.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending4.jpg" alt="image">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">FLorida - USA</h5>
-                        <ul>
-                            <li><a href="images/trending/trending4.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending4.jpg" alt="image">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Tokyo - Japan</h5>
-                        <ul>
-                            <li><a href="images/trending/trending4.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending6.jpg" alt="image">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Bali - Indonesia</h5>
-                        <ul>
-                            <li><a href="images/trending/trending6.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/destination/destination4.jpg" alt="image">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Bangkok - Thailand</h5>
-                        <ul>
-                            <li><a href="images/destination/destination4.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/destination/destination3.jpg" alt="image">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Bangkok - Thailand</h5>
-                        <ul>
-                            <li><a href="<?= PUBLIC_URL; ?>images/destination/destination3.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending5.jpg" alt="image">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Tokyo - Japan</h5>
-                        <ul>
-                            <li><a href="<?= PUBLIC_URL; ?>images/destination/destination5.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+            }
+            ?>
         </div>
     </div>
 </div>
