@@ -26,7 +26,7 @@
 
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index-2.html">
-                            <img src="<?php echo PUBLIC_URL; ?>images/logo.png" alt="image">
+                            <img src="<?php echo PUBLIC_URL; ?>images/black-logo.png" alt="image">
                         </a>
                     </div>
 
