@@ -17,7 +17,7 @@
     //mail
     define('MHOST', "mail.singhetravels.com");
     define('MUSERNAME', 'info@singhetravels.com');
-    define('MPASSWORD', 'LZ4cm?V@6}b(');
+    define('MPASSWORD', 'Ax~2_05]lUSI');
     define('MTITLE', "Singhe Travels - Best Travel Partner");
     define('MPORT', 587);
 
