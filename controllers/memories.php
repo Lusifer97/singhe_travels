@@ -35,8 +35,8 @@ class Memories extends Controller
     function images($id)
     {   $id = base64_decode($id);
         
-        // $this->view->albums_details = $this->model->getOne($id);
-        // $this->view->photos = $this->model->getPhotos($id);
+        $this->view->albums_details = $this->model->getOne($id);
+        $this->view->photos = $this->model->getPhotos($id);
         $this->view->title = "Image Collection";
         $this->view->render('header');
         $this->view->render('navigation');

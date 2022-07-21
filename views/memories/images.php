@@ -21,137 +21,51 @@
 <div class="gallery pt-6 pb-0">
     <div class="container">
         <div class="section-title mb-6 text-center w-75 mx-auto">
-            <h4 class="mb-1 theme1">Our Gallery</h4>
-            <h2 class="mb-1">Some Beautiful <span class="theme">Snapshoots</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            <?php
+            if (!empty($this->albums_details)) {
+                foreach ($this->albums_details as $key => $value) {
+            ?>
+                    <h4 class="mb-1 theme1"><?= $value["title"]; ?></h4>
+            <?php
+                }
+            }
+            ?>
+
+
         </div>
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending1.jpg" alt="image">
+            <?php
+            if (!empty($this->photos)) {
+                foreach ($this->photos as $key => $value) {
+            ?>
+                    <div class="<?php 
+                    if($key<2){
+                        echo "col-lg-6 col-md-6";
+                    }else if($key<5){
+                        echo "col-lg-4 col-md-4"; 
+                    }else{
+                        echo "col-lg-3 col-md-3"; 
+                    }
+                    ?> col-sm-12 col-xs-12">
+                        <div class="gallery-item mb-4 rounded overflow-hidden">
+                            <div class="gallery-image">
+                                <img src="<?= PUBLIC_URL; ?>images/trending/<?=$value["image"];?>" alt="image">
+                            </div>
+                            <div class="gallery-content">
+                                <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Singhe Travels - Sri Lanka</h5>
+                                <ul>
+                                    <li><a href="<?= PUBLIC_URL; ?>images/trending/<?=$value["image"];?>" data-lightbox="gallery" data-title="Singhe Travels - Sri Lanka"><i class="fa fa-eye"></i></a></li>
+                                     
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Barcelona - Spain</h5>
-                        <ul>
-                            <li><a href="images/trending/trending1.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending2.jpg" alt="image">
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Beijing - China</h5>
-                        <ul>
-                            <li><a href="images/trending/trending2.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending3.jpg" alt="image">
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Moscow - Russia</h5>
-                        <ul>
-                            <li><a href="images/trending/trending3.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending4.jpg" alt="image">
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Bangkok - Thailand</h5>
-                        <ul>
-                            <li><a href="images/trending/trending4.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/trending/trending8.jpg" alt="image">
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">FLorida - USA</h5>
-                        <ul>
-                            <li><a href="images/trending/trending5.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/destination/destination14.jpg" alt="image">
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Tokyo - Japan</h5>
-                        <ul>
-                            <li><a href="images/trending/trending6.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/destination/destination7.jpg" alt="image">
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Bali - Indonesia</h5>
-                        <ul>
-                            <li><a href="images/trending/trending7.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/destination/destination6.jpg" alt="image">
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Bangkok - Thailand</h5>
-                        <ul>
-                            <li><a href="images/trending/trending8.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <div class="gallery-item mb-4 rounded overflow-hidden">
-                    <div class="gallery-image">
-                        <img src="<?= PUBLIC_URL; ?>images/destination/destination4.jpg" alt="image">
-                    </div>
-                    <div class="gallery-content">
-                        <h5 class="white text-center position-absolute bottom-0 pb-4 left-50 mb-0 w-100">Bangkok - Thailand</h5>
-                        <ul>
-                            <li><a href="images/trending/trending8.jpg" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+            }
+            ?>
+
+            
         </div>
     </div>
 </div>
