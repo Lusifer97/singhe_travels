@@ -214,31 +214,21 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <h4 class="text-center border-b pb-2">Login</h4>
-                                    <div class="log-reg-button d-flex align-items-center justify-content-between">
-                                        <button type="submit" class="btn btn-fb">
-                                            <i class="fab fa-facebook"></i> Login with Facebook
-                                        </button>
-                                        <button type="submit" class="btn btn-google">
-                                            <i class="fab fa-google"></i> Login with Google
-                                        </button>
-                                    </div>
-                                    <hr class="log-reg-hr position-relative my-4 overflow-visible">
-                                    <form method="post" action="#" name="contactform" id="contactform">
+
+                                    <form method="post" onsubmit="login(event,this)">
                                         <div class="form-group mb-2">
-                                            <input type="text" name="user_name" class="form-control" id="fname" placeholder="User Name or Email Address">
+                                            <input type="text" name="email" class="form-control" id="fname" placeholder="Email Address">
                                         </div>
                                         <div class="form-group mb-2">
-                                            <input type="password" name="password_name" class="form-control" id="lpass" placeholder="Password">
+                                            <input type="password" name="psw" class="form-control" id="lpass" placeholder="Password">
                                         </div>
                                         <div class="form-group mb-2">
-                                            <input type="checkbox" class="custom-control-input" id="exampleCheck">
-                                            <label class="custom-control-label mb-0" for="exampleCheck1">Remember me</label>
+
                                             <a class="float-end" href="#">Lost your password?</a>
                                         </div>
                                         <div class="comment-btn mb-2 pb-2 text-center border-b">
                                             <input type="submit" class="nir-btn w-100" id="submit" value="Login">
                                         </div>
-                                        <p class="text-center">Don't have an account? <a href="#" class="theme">Register</a></p>
                                     </form>
                                 </div>
                             </div>
@@ -253,27 +243,19 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <h4 class="text-center border-b pb-2">Register</h4>
-                                    <div class="log-reg-button d-flex align-items-center justify-content-between">
-                                        <button type="submit" class="btn btn-fb">
-                                            <i class="fab fa-facebook"></i> Login with Facebook
-                                        </button>
-                                        <button type="submit" class="btn btn-google">
-                                            <i class="fab fa-google"></i> Login with Google
-                                        </button>
-                                    </div>
-                                    <hr class="log-reg-hr position-relative my-4 overflow-visible">
-                                    <form method="post" action="#" name="contactform1" id="contactform1">
+
+                                    <form id="contactform1" onsubmit="register(event,this)">
                                         <div class="form-group mb-2">
-                                            <input type="text" name="user_name" class="form-control" id="fname1" placeholder="User Name">
+                                            <input type="text" name="name" class="form-control" id="fname1" placeholder="User Name" required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <input type="text" name="user_name" class="form-control" id="femail" placeholder="Email Address">
+                                            <input type="text" name="email" class="form-control" id="femail" placeholder="Email Address" required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <input type="password" name="password_name" class="form-control" id="lpass1" placeholder="Password">
+                                            <input type="password" name="psw" class="form-control" id="lpass1" placeholder="Password" required>
                                         </div>
                                         <div class="form-group mb-2">
-                                            <input type="password" name="password_name" class="form-control" id="lrepass" placeholder="Re-enter Password">
+                                            <input type="password" name="password_name" class="form-control" id="lrepass" placeholder="Re-enter Password" required>
                                         </div>
                                         <div class="form-group mb-2 d-flex">
                                             <input type="checkbox" class="custom-control-input" id="exampleCheck1">
@@ -282,8 +264,94 @@
                                         <div class="comment-btn mb-2 pb-2 text-center border-b">
                                             <input type="submit" class="nir-btn w-100" id="submit1" value="Register">
                                         </div>
-                                        <p class="text-center">Already have an account? <a href="#" class="theme">Login</a></p>
                                     </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- oder model -->
+
+<div class="modal fade log-reg" id="exampleModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="post-tabs">
+
+                    <ul class="nav nav-tabs nav-pills nav-fill" id="postsTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button aria-controls="login" aria-selected="false" class="nav-link active" data-bs-target="#login1" data-bs-toggle="tab" id="login-tab" role="tab" type="button">Oders</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button aria-controls="register" aria-selected="true" class="nav-link" data-bs-target="#register1" data-bs-toggle="tab" id="register-tab" role="tab" type="button">User Details</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content blog-full" id="postsTabContent">
+
+                        <div aria-labelledby="login-tab" class="tab-pane fade active show" id="login1" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Package Name</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Ella Rock</td>
+                                                <td>$ 450</td>
+                                                <td><i class="fa fa-check-circle" aria-hidden="true"></i> Finished
+                                                </td>
+                                                <td><i class="fa fa-info-circle" aria-hidden="true" alt="info"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Hortain Plains</td>
+                                                <td>$ 150</td>
+                                                <td><i class="fa fa-plane" aria-hidden="true"></i> On going
+                                                </td>
+                                                <td><i class="fa fa-info-circle" aria-hidden="true" alt="info"></i>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div aria-labelledby="register-tab" class="tab-pane fade" id="register1" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="blog-image rounded">
+                                        <a href="#" style="background-image: url(<?php echo PUBLIC_URL; ?>images/trending/trending5.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h4 class="text-left border-b pb-2"><?= Session::get("user"); ?></h4>
+
+                                    <ul>
+                                        <li>E mail : deshan.bandara1997@gmail.com</li><br>
+                                        <li>Level : Newbei</li><br>
+                                        <li>Tour Count :12</li>
+                                    </ul>
+                                    <a href="<?=URL;?>user/logout">
+                                        <button type="button" class="btn btn-info text-white"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Log Out</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

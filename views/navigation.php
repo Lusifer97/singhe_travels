@@ -3,9 +3,9 @@
         <div class="container d-flex align-items-center justify-content-between">
             <div class="links">
                 <ul>
-                    <li><a href="#" class="white"><i class="icon-calendar white"></i> Thursday, Mar 26, 2021</a></li>
-                    <li><a href="#" class="white"><i class="icon-location-pin white"></i> Hollywood, America</a></li>
-                    <li><a href="#" class="white"><i class="icon-clock white"></i> Mon-Fri: 10 AM – 5 PM</a></li>
+                    <li><a href="#" class="white"><i class="icon-calendar white"></i> <?=date("Y/m/d");?></a></li>
+                    <li><a href="#" class="white"><i class="icon-location-pin white"></i> Gonapinuwala, Sri Lanka.</a></li>
+                    <li><a href="#" class="white"><i class="icon-clock white"></i> Mon - Sat 09.00 - 18.30</a></li>
                 </ul>
             </div>
             <div class="links float-right">
@@ -39,18 +39,22 @@
                             <li><a href="<?= URL; ?>accommodations">Accomadation</a></li>
                             <li><a href="<?= URL; ?>aboutus">About Us</a></li>
                             <li><a href="<?= URL; ?>contactus">Contact Us</a></li>
-                            <li><a href="<?= URL; ?>blog">Blog</a></li>
+                            <!-- <li><a href="<?= URL; ?>blog">Blog</a></li> -->
 
                              
                              
                              
                              
-                            <li class="search-main"><a href="#search1" class="mt_search"><i class="fa fa-search"></i></a></li>
+                            <!-- <li class="search-main"><a href="#search1" class="mt_search"><i class="fa fa-search"></i></a></li> -->
                         </ul>
                     </div>
                     <div class="register-login d-flex align-items-center">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3">
-                            <i class="icon-user"></i> Login/Register
+                        <a href="#" class="lrbutton" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3">
+                            <i class="icon-user lrbutton"></i> Login/Register
+                        </a>
+
+                        <a href="#" class="ubutton" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="me-3">
+                            <i class="icon-user ubutton"></i> <?=Session::get("user");?>
                         </a>
 
                     </div>

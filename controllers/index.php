@@ -26,6 +26,7 @@ class Index extends Controller
         // $this->view->feedbacks = $this->model->feedbacks();
         // $this->view->blog = $this->model->blog();
         // $this->view->count = $this->model->destinationCount();
+        // Session::unset_session("user");
         $this->view->title = "Home";
         $this->view->render('header');
         $this->view->render('navigation');

@@ -123,39 +123,57 @@ function addcommenttofeedback(e, form) {
 function register(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    var psw1 = $('#psw1').val();
-    var psw2 = $('#psw2').val();
+    var psw1 = $('#lpass1').val();
+    var psw2 = $('#lrepass').val();
     // console.log(psw1,psw2);
+
     if (psw1 == psw2) {
-        $('#contact_b').html("sending");
-
-        postAsync(url + "user/register", formData).then(function(response) {
-            // console.log(response.data);
-
-
-            if (response.data.status == true) {
-
-                alert('You are successfully registered on our site. Please check your email inbox to get your confirmation code.');
-                window.open(url + "user/confirmation", "_self");
-                // location.load(url + "user/confirmation");
+        $('.nir-btn').html("sending");
+        if ($('.custom-control-input').is(":checked")) {
+            postAsync(url + "user/register", formData).then(function(response) {
+                // console.log(response.data);
 
 
-            } else {
-                alert('Your email address is all ready exist.. Use other email for registration');
-                $(form).trigger('reset');
-                $('#contact_b').html("Register Now");
-            }
-        });
+                if (response.data.status == true) {
+
+                    alert('You are successfully registered on our site. Please check your email inbox to get your confirmation code.');
+                    $('#contactform1').html('');
+                    $('#contactform1').append(`<form onsubmit="activateUser(event,this)">
+                    <div class="form-group mb-2">
+                        <input type="text" name="c_code" class="form-control"  placeholder="Confirmation Code">
+                    </div>
+                    <div class="comment-btn mb-2 pb-2 text-center border-b">
+                        <input type="submit" class="nir-btn w-100" id="submit3" value="Submit">
+                    </div>
+                </form>`);
+                    // window.open(url + "user/confirmation", "_self");
+                    // location.load(url + "user/confirmation");
+
+
+                } else {
+                    alert('Your email address is all ready exist.. Use other email for registration');
+                    $(form).trigger('reset');
+                    $('#contact_b').html("Register Now");
+                }
+            });
+        } else {
+            alert("Please read our terms & conditions");
+        }
+
     } else {
         alert("Password not equal...please re enter your password...!");
-        $('#psw1').val("");
-        $('#psw2').val("");
+        $('#lpass1').val("");
+        $('#lrepass').val("");
     }
+
+
+
+
 
 }
 
 function activateUser(e, form) {
-    $('#contact_b').html("sending");
+    $('#submit3').html("sending");
     e.preventDefault();
     var formData = new FormData(form);
     postAsync(url + "user/activateUser", formData).then(function(response) {
@@ -163,8 +181,8 @@ function activateUser(e, form) {
 
 
         if (response.data.status == true) {
-            alert('You user account successfully activated..!');
-            window.open(url + "user/login", "_self");
+            alert('You user account successfully activated..! Please login again to proceed..');
+            window.open(url, "_self");
 
         } else {
             alert('Confirmation code was wrong please check again..!');
@@ -182,7 +200,7 @@ function login(e, form) {
 
         if (response.data.status == true) {
             alert('Access Granted..!');
-            window.open(url + "index", "_self");
+            window.open(url, "_self");
 
         } else {
             alert('Email or Password invalid.try again..!');
@@ -440,3 +458,9 @@ function packageFilterForm(e, form) {
 
     });
 }
+
+$(document).ready(function() {
+    if (user != "") {
+        $('.lrbutton').css("display", "none")
+    }
+});
