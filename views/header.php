@@ -22,7 +22,7 @@
     <script>
         var url = '<?= URL; ?>';
         var PUBLIC_URL = '<?= PUBLIC_URL; ?>';
-        // var user = '<?= Session::get("user"); ?>';
+        var user = '<?= Session::get("user"); ?>';
     </script>
     <!-- Axios -->
 

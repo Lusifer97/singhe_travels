@@ -41,19 +41,19 @@ class User extends Controller
         
     }
 
-    function confirmation()
-    {
+    // function confirmation()
+    // {
          
          
-        $this->view->title = "Confirmation Code";
-        $this->view->render('header');
-        $this->view->render('navigation');
-        $this->view->render('user/confirmation');
-        $this->view->render('footer');
+    //     $this->view->title = "Confirmation Code";
+    //     $this->view->render('header');
+    //     $this->view->render('navigation');
+    //     $this->view->render('user/confirmation');
+    //     $this->view->render('footer');
         
 
         
-    }
+    // }
     function login()
     { 
         $this->view->title = "Login";
@@ -69,14 +69,12 @@ class User extends Controller
     function logout()
     {   
         Session::unset_session("user");
-        $this->view->title = "Login";
+        $this->view->title = "Home";
         $this->view->render('header');
         $this->view->render('navigation');
         $this->view->render('index/index');
         $this->view->render('footer');
-        
-
-        
+         
     }
 
     function activateUser(){
