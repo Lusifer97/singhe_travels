@@ -39,7 +39,8 @@
                             </a>
                             <ul id="page" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
                                 <li class="sidebar-item"><a class="sidebar-link" href="<?php echo URL; ?>attractions">Create</a></li>
-                                <li class="sidebar-item"><a class="sidebar-link" href="#>Manage</a></li>
+                                <li class="sidebar-item"><a class="sidebar-link" href="<?php echo URL; ?>attractions/manage">Manage</a></li>
+                                <li class="sidebar-item"><a class="sidebar-link" href="<?php echo URL; ?>attractions/edit">Edit</a></li>
 
                             </ul>
                         </li>

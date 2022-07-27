@@ -3,7 +3,7 @@
 
                         <div class="header">
                             <h1 class="header-title">
-                                Create Attraction Section
+                                Edit Attraction Section
                             </h1>
 
                         </div>
@@ -25,20 +25,20 @@
                                           
                                             <div class="mb-3 col-md-12">
                                                 <label for="inputEmail4">Attraction Name</label>
-                                                <input type="text" class="form-control"  id="short" name="short" >
+                                                <input type="text" class="form-control"  value="sample" id="short" name="short" >
                                             </div>
 
                                             <div class="mb-3 col-md-12">
                                                 <label for="inputPassword4">Image</label>
-                                                <input type="file" class="form-control"  id="image" name="image">
+                                                <input type="file" class="form-control"  value="sample"  id="image" name="image">
                                             </div>
                                             <div class="mb-3 col-md-12">
                                                 <label for="inputPassword4">Location</label>
-                                                <input type="text" class="form-control"  name="description" id="description">
+                                                <input type="text" class="form-control"  value="sample"  name="description" id="description">
                                             </div>
                                             <div class="mb-3 col-md-12">
                                                 <label for="inputPassword4">Description</label>
-                                                <input type="text" class="form-control"  name="description" id="description">
+                                                <input type="text" class="form-control"  value="sample"  name="description" id="description">
                                             </div>
 
 
