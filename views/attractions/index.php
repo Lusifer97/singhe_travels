@@ -43,7 +43,7 @@
                                     <div class="row">
                                         <div class="col-lg-4 col-md-3">
                                             <div class="trend-item2 rounded">
-                                                <a href="tour-single.html" style="background-image: url(<?= PUBLIC_URL; ?>images/destination/destination17.jpg);"></a>
+                                                <a href="tour-single.html" style="background-image: url(<?= PUBLIC_URL; ?>images/trending/<?=$value["image"];?>);"></a>
                                                 <div class="color-overlay"></div>
                                             </div>
                                         </div>
@@ -124,7 +124,7 @@
                                             <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
                                                 <div class="trend-item1">
                                                     <div class="trend-image position-relative rounded">
-                                                        <img src="<?= PUBLIC_URL; ?>images/destination/destination17.jpg" alt="image">
+                                                        <img src="<?= PUBLIC_URL; ?>images/trending/<?=$value["image"];?>" alt="image">
                                                         <div class="trend-content d-flex align-items-center justify-content-between position-absolute bottom-0 p-4 w-100 z-index">
                                                             <div class="trend-content-title">
                                                                 <h5 class="mb-0"><a href="tour-single.html" class="theme1"><?= $value["city"]; ?></a></h5>

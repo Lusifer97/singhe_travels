@@ -31,7 +31,7 @@
                                 <div class="single-title">
                                     <h2 class="mb-1"><?= $value["name"]; ?></h2>
                                     <div class="rating-main d-lg-flex align-items-center text-lg-start text-center">
-                                        <p class="mb-0 me-2"><i class="icon-location-pin"></i> <?= $value["city"]; ?>, Sri Lanka</p>
+                                        <p class="mb-0 me-2"><i class="icon-location-pin"></i> <?= $value["city"]; ?>, <span><?= $value["district"]; ?></span>, Sri Lanka</p>
 
                                         <span>(<?php
                                                 if (!empty($this->count)) {
@@ -55,7 +55,7 @@
                                     foreach ($this->photos as $key => $value) {
                                 ?>
                                         <div>
-                                            <img src="<?php echo PUBLIC_URL; ?>images/trending/<?= $value["image"]; ?>" alt="1">
+                                            <img src="<?php echo PUBLIC_URL; ?>images/destination/<?= $value["image"]; ?>" alt="Singhe Travels">
                                         </div>
                                 <?php
                                     }
@@ -70,7 +70,7 @@
                                     foreach ($this->photos as $key => $value) {
                                 ?>
                                         <div>
-                                            <img src="<?php echo PUBLIC_URL; ?>images/trending/<?= $value["image"]; ?>" alt="1">
+                                            <img src="<?php echo PUBLIC_URL; ?>images/destination/<?= $value["image"]; ?>" alt="1">
                                         </div>
                                 <?php }
                                 } ?>
@@ -248,18 +248,13 @@
                             <form class="form-content rounded overflow-hidden bg-title">
                                 <h4 class="white text-center border-b pb-2">MAKE A BOOKING</h4>
                                 <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <span class="white pb-1">Your choosen date is</span>
-                                            <h4 class="choosen-date white mb-0 border-0"><i class="fa fa-calendar"></i> 10 - 15 March, 2020 <small class="d-flex justify-content-between fw-normal w-100 my-2">(5 days) <a href="#" class="white text-decoration-underline">Change</a></small></h4>
-                                        </div>
-                                    </div>
+
                                     <div class="col-lg-12">
                                         <div class="form-group mb-2">
                                             <label class="white">No. Of People</label>
                                             <div class="input-box">
-                                                <i class="flaticon-add-user"></i>
-                                                <select class="niceSelect">
+                                                <i class="fa fa-male" aria-hidden="true"></i>
+                                                <select class="niceSelect" onchange="people()" id="getPeople">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -269,10 +264,60 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group mb-2">
+                                            <label class="white">Check in</label>
+                                            <div class="input-box">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                <input type="date" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group mb-2">
+                                            <label class="white">Check Out</label>
+                                            <div class="input-box">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                <input type="date" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group mb-2">
+                                            <label class="white">Pickup Location</label>
+                                            <div class="input-box">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                <select class="niceSelect">
+                                                    <option>Select</option>
+                                                    <?php
+                                                    if (!empty($this->pickupFee)) {
+                                                        foreach ($this->pickupFee as $key => $value) {
+                                                    ?>
+                                                            <option value="<?= $value["fee"]; ?>"><?= $value["location"]; ?></option>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-lg-12">
                                         <div class="form-group bg-white p-3 rounded mb-2">
                                             <ul>
-                                                <li class="d-block pb-1">$150.00 x 2 guests<span class="float-end fw-bold">$300.00</span></li>
+                                                <li class="d-block pb-1">$<span id="singlePrice"><?php
+                                                                                                    if (!empty($this->data)) {
+                                                                                                        foreach ($this->data as $key => $value) {
+                                                                                                            echo $value["price"];
+                                                                                                        }
+                                                                                                    }
+                                                                                                    ?></span>.00 x <span id="people">01</span> guests<span class="float-end fw-bold" id="subTotal">$<?php
+                                                                                                                                                                if (!empty($this->data)) {
+                                                                                                                                                                    foreach ($this->data as $key => $value) {
+                                                                                                                                                                        echo $value["price"];
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                                ?>.00</span></li>
                                                 <li class="d-block pb-1">Booking fee + tax<span class="float-end  fw-bold">$10.00</span></li>
                                                 <li class="d-block  pb-1">Book now &amp; Save<span class="float-end   fw-bold">-$15</span></li>
                                                 <li class="d-block pb-1">Other fees<span class="float-end  fw-bold">Free</span></li>

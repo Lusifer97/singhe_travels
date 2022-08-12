@@ -464,3 +464,12 @@ $(document).ready(function() {
         $('.lrbutton').css("display", "none")
     }
 });
+
+function people() {
+    var people = $('#getPeople').val();
+    var singlePrice = $('#singlePrice').html();
+    var subTotal = singlePrice * people;
+    $('#people').html(people);
+    console.log(subTotal);
+    $('#subTotal').html('$ ' + subTotal + '.00');
+}

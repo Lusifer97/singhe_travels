@@ -12,7 +12,7 @@ class Aboutus extends Controller
     function index()
     {
          
-     
+        $this->view->data = $this->model->feedbacks();
         $this->view->title = "Who we are";
         $this->view->render('header');
         $this->view->render('navigation');

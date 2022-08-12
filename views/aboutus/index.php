@@ -3,11 +3,11 @@
     <div class="breadcrumb-outer">
         <div class="container">
             <div class="breadcrumb-content text-center">
-                <h1 class="mb-3"><?=$this->title?></h1>
+                <h1 class="mb-3"><?= $this->title ?></h1>
                 <nav aria-label="breadcrumb" class="d-block">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $this->title; ?></li>
                     </ul>
                 </nav>
             </div>
@@ -23,8 +23,10 @@
                 <div class="col-lg-6 ps-4">
                     <div class="about-content text-center text-lg-start">
                         <h4 class="theme d-inline-block mb-0">Get To Know Us</h4>
-                        <h2 class="border-b mb-2 pb-1">Explore All Tour of the world with us.</h2>
-                        <p class="border-b mb-2 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h2 class="border-b mb-2 pb-1">Singhe Travles - Best Travel Partner in Sri Lanka.</h2>
+                        <p class="border-b mb-2 pb-2">With our team you dont't have to worry about anything. We are allready planned your tour & you just have to visit <b>Sri Lanka & Enjoy.</b> Our
+                            No 01 priority is our travellers safety. We got licensed Guaids & team members with huge experiances with hicking & camping. Allso our CEO fomer <b>President Boy Scount in Sri Lanka.</b>
+                            We invites you to come join with us & spend you vacation in most beautifull and peacefull island. </p>
                         <div class="about-listing">
                             <ul class="d-flex justify-content-between">
                                 <li><i class="icon-location-pin theme"></i> Tour Guide</li>
@@ -47,8 +49,8 @@
                                 <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
                                     <div class="counter-item border-end pe-4">
                                         <div class="counter-content">
-                                            <h2 class="value mb-0 theme">20</h2>
-                                            <span class="m-0">Years Experiences</span>
+                                            <h2 class="value mb-0 theme">120</h2>
+                                            <span class="m-0">Single Destinations</span>
                                         </div>
                                     </div>
                                 </div>
@@ -71,8 +73,8 @@
                                 <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
                                     <div class="counter-item">
                                         <div class="counter-content">
-                                            <h2 class="value mb-0 theme">320</h2>
-                                            <span class="m-0">Award Winning</span>
+                                            <h2 class="value mb-0 theme">3</h2>
+                                            <span class="m-0">Years of Experiances</span>
                                         </div>
                                     </div>
                                 </div>
@@ -93,8 +95,7 @@
     <div class="container">
         <div class="section-title mb-6 w-50 mx-auto text-center">
             <h4 class="mb-1 theme1">Core Features</h4>
-            <h2 class="mb-1">Find <span class="theme">Travel Perfection</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            <h2 class="mb-1">Why <span class="theme">Do You Choose us?</span></h2>
         </div>
 
         <div class="why-us">
@@ -107,8 +108,7 @@
                                     <i class="icon-flag theme"></i>
                                 </div>
                                 <h4><a href="about.html">Tell Us What You want To Do</a></h4>
-                                <p class="mb-2">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-                                <p class="mb-0 theme">100+ Reviews</p>
+                                <p class="mb-2">With 24*7 coustomer service you can connect with us instantly.</p>
                             </div>
                         </div>
                     </div>
@@ -118,9 +118,8 @@
                                 <div class="why-us-icon mb-1">
                                     <i class="icon-location-pin theme"></i>
                                 </div>
-                                <h4><a href="about.html">Share Your Travel Locations</a></h4>
-                                <p class="mb-2">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-                                <p class="mb-0 theme">100+ Reviews</p>
+                                <h4><a href="about.html">Choose your pickup Locations</a></h4>
+                                <p class="mb-2">On every single coner in this island. We can pick you. Any time Any where.</p>
                             </div>
                         </div>
                     </div>
@@ -130,9 +129,8 @@
                                 <div class="why-us-icon mb-1">
                                     <i class="icon-directions theme"></i>
                                 </div>
-                                <h4><a href="about.html">Share Your Travel Preference</a></h4>
-                                <p class="mb-2">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-                                <p class="mb-0 theme">100+ Reviews</p>
+                                <h4><a href="about.html">Tour packages & Destinations</a></h4>
+                                <p class="mb-2">There are so many destinations & packages to choose.</p>
                             </div>
                         </div>
                     </div>
@@ -142,9 +140,8 @@
                                 <div class="why-us-icon mb-1">
                                     <i class="icon-compass theme"></i>
                                 </div>
-                                <h4><a href="about.html">Here 100% Trusted Tour Agency</a></h4>
-                                <p class="mb-2">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-                                <p class="mb-0 theme">100+ Reviews</p>
+                                <h4><a href="about.html">Authorized Tour Agent</a></h4>
+                                <p class="mb-2">We officially registered on Sri lanka Goverment & ensure guest safety.</p>
                             </div>
                         </div>
                     </div>
@@ -159,9 +156,8 @@
 <section class="our-team pb-0 pt-6">
     <div class="container">
         <div class="section-title mb-6 w-75 mx-auto text-center">
-            <h4 class="mb-1 theme1">Tour Guides</h4>
-            <h2 class="mb-1">Meet Our <span class="theme">Excellent Guides</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+            <h4 class="mb-1 theme1">Team Members</h4>
+            <h2 class="mb-1">Meet Our <span class="theme">Excellent Team</span></h2>
         </div>
         <div class="team-main">
             <div class="row shop-slider">
@@ -171,8 +167,8 @@
                             <img src="<?= PUBLIC_URL; ?>images/team/img1.jpg" alt="team">
                         </div>
                         <div class="team-content text-center p-3 bg-theme">
-                            <h4 class="mb-0 white">Salmon Thuir</h4>
-                            <p class="mb-0 white">Senior Agent</p>
+                            <h4 class="mb-0 white">Geeth Weerasinghe</h4>
+                            <p class="mb-0 white">Owner</p>
                         </div>
                     </div>
                 </div>
@@ -182,8 +178,8 @@
                             <img src="<?= PUBLIC_URL; ?>images/team/img2.jpg" alt="team">
                         </div>
                         <div class="team-content text-center p-3 bg-theme">
-                            <h4 class="mb-0 white">Horke Pels</h4>
-                            <p class="mb-0 white">Head Officer</p>
+                            <h4 class="mb-0 white">Ranjan Weerasinghe</h4>
+                            <p class="mb-0 white">licensed Guiad & Adviser</p>
                         </div>
                     </div>
                 </div>
@@ -193,8 +189,8 @@
                             <img src="<?= PUBLIC_URL; ?>images/team/img4.jpg" alt="team">
                         </div>
                         <div class="team-content text-center p-3 bg-theme">
-                            <h4 class="mb-0 white">Solden kalos</h4>
-                            <p class="mb-0 white">Supervisor</p>
+                            <h4 class="mb-0 white">Nadun Randika</h4>
+                            <p class="mb-0 white">Manager</p>
                         </div>
                     </div>
                 </div>
@@ -204,19 +200,8 @@
                             <img src="<?= PUBLIC_URL; ?>images/team/img3.jpg" alt="team">
                         </div>
                         <div class="team-content text-center p-3 bg-theme">
-                            <h4 class="mb-0 white">Nelson Bam</h4>
-                            <p class="mb-0 white">Quality Assurance</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <div class="team-list rounded">
-                        <div class="team-image">
-                            <img src="<?= PUBLIC_URL; ?>images/team/img4.jpg" alt="team">
-                        </div>
-                        <div class="team-content text-center bg-theme p-3">
-                            <h4 class="mb-0 white">Cacics Coold</h4>
-                            <p class="mb-0 white">Asst. Manager</p>
+                            <h4 class="mb-0 white">Deshan Bandara</h4>
+                            <p class="mb-0 white">Technical Manager</p>
                         </div>
                     </div>
                 </div>
@@ -231,7 +216,6 @@
         <div class="section-title mb-6 text-center w-75 mx-auto">
             <h4 class="mb-1 theme1">Our Testimonails</h4>
             <h2 class="mb-1">Good Reviews By <span class="theme">Clients</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
         </div>
         <div class="row align-items-center">
             <div class="col-lg-5 pe-4">
@@ -241,34 +225,30 @@
             </div>
             <div class="col-lg-7 ps-4">
                 <div class="row review-slider">
-                    <div class="col-sm-4 item">
-                        <div class="testimonial-item1 rounded">
-                            <div class="author-info mt-2 d-flex align-items-center mb-4">
-                                <a href="#"><img src="<?= PUBLIC_URL; ?>images/testimonial/img1.jpg" alt=""></a>
-                                <div class="author-title ms-3">
-                                    <h5 class="m-0 theme">Jared Erondu</h5>
-                                    <span>Supervisor</span>
+                    <?php
+                    if (!empty($this->data)) {
+                        foreach ($this->data as $key => $value) {
+                    ?>
+                            <div class="col-sm-4 item">
+                                <div class="testimonial-item1 rounded">
+                                    <div class="author-info mt-2 d-flex align-items-center mb-4">
+                                        <a href="#"><img src="<?= PUBLIC_URL; ?>images/testimonial/img1.jpg" alt=""></a>
+                                        <div class="author-title ms-3">
+                                            <h5 class="m-0 theme"><?=$value["name"];?></h5>
+                                            <span><?=$value["date"];?></span>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <p class="m-0"><i class="fa fa-quote-left me-2 fs-1"></i><?=$value["feedback"];?></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="details">
-                                <p class="m-0"><i class="fa fa-quote-left me-2 fs-1"></i>Lorem Ipsum is simply dummy text of the printing andypesetting industry. Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy hic et quidem. Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 item">
-                        <div class="testimonial-item1 rounded">
-                            <div class="author-info mt-2 d-flex align-items-center mb-4">
-                                <a href="#"><img src="<?= PUBLIC_URL; ?>images/testimonial/img1.jpg" alt=""></a>
-                                <div class="author-title ms-3">
-                                    <h5 class="m-0 theme">Jared Erondu</h5>
-                                    <span>Supervisor</span>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <p class="m-0"><i class="fa fa-quote-left me-2 fs-1"></i>Lorem Ipsum is simply dummy text of the printing andypesetting industry. Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy hic et quidem. Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    }
+                    ?>
+
+
                 </div>
             </div>
         </div>
@@ -276,19 +256,4 @@
 </section>
 
 
-<div class="our-partner pt-0 pb-6">
-    <div class="container">
-        <div class="partners_inner">
-            <ul>
-                <li><img src="<?= PUBLIC_URL; ?>images/cl-5.png" alt=""></li>
-                <li><img src="<?= PUBLIC_URL; ?>images/cl-2.png" alt=""></li>
-                <li><img src="<?= PUBLIC_URL; ?>images/cl-3.png" alt=""></li>
-                <li><img src="<?= PUBLIC_URL; ?>images/cl-4.png" alt=""></li>
-                <li><img src="<?= PUBLIC_URL; ?>images/cl-5.png" alt=""></li>
-                <li><img src="<?= PUBLIC_URL; ?>images/cl-3.png" alt=""></li>
-                <li><img src="<?= PUBLIC_URL; ?>images/cl-2.png" alt=""></li>
-                <li><img src="<?= PUBLIC_URL; ?>images/cl-1.png" alt=""></li>
-            </ul>
-        </div>
-    </div>
-</div>
+ 
