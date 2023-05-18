@@ -1,69 +1,46 @@
-
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin Dashboards</title>
-        <link href="<?php echo PUBLIC_URL; ?>css/modern.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-
-        <div class="wrapper">
-
-            <!-- Header Start  -->
-            <nav id="sidebar" class="sidebar">
-                <a class="sidebar-brand" href="index.php">
-                    Setharana CMS
-                </a>
-                <div class="sidebar-content">
-                    <div class="sidebar-user">
-                        <img alt="Chris Wood" src="<?php echo PUBLIC_URL; ?>/img/avatars/avatar.jpg" class="rounded-circle img-responsive mt-2" width="128" height="128"> 
-
-                        <small>Admin</small>
-                    </div>
-
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-header">
-                            Main
-                        </li>
-
-
-                        <li class="sidebar-item ">
-                            <a class="sidebar-link" href="index.php"> 
-                                <i class="align-middle me-2 fas fa-fw fa-home"></i> <span class="align-middle">Dashboards</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item">
-                            <a data-bs-target="#page" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                                <i class="align-middle me-2 fas fa-fw fa-address-card"></i> <span class="align-middle">Attractions</span>
-                            </a>
-                            <ul id="page" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                                <li class="sidebar-item"><a class="sidebar-link" href="<?php echo URL; ?>attractions">Create</a></li>
-                                <li class="sidebar-item"><a class="sidebar-link" href="<?php echo URL; ?>attractions/manage">Manage</a></li>
-                                <li class="sidebar-item"><a class="sidebar-link" href="<?php echo URL; ?>attractions/edit">Edit</a></li>
-
-                            </ul>
-                        </li>
-                        
+<!DOCTYPE html>
+<html lang="en">
 
 
 
-                        <li class="sidebar-item">
-                            <a data-bs-target="#profile"  class="sidebar-link " href="./log-out.php">
-                                <i class="align-middle me-2 fas fa-fw fa-backward"></i> <span class="align-middle">Sign Out</span>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Travl : Hotel Admin Dashboard Bootstrap 5 Template" />
+    <meta property="og:title" content="Travl : Hotel Admin Dashboard Bootstrap 5 Template" />
+    <meta property="og:description" content="Travl : Hotel Admin Dashboard Bootstrap 5 Template" />
+    <meta property="og:image" content="../../../../travl.dexignlab.com/xhtml/social-image.png" />
+    <meta name="format-detection" content="telephone=no"> -->
 
-                            </a>
+    <!-- PAGE TITLE HERE -->
+    <title>Travl Hotel Admin Dashboard</title>
 
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- Header End -->
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href="<?=PUBLIC_URL;?>images/favicon.png" />
+    <link href="<?=PUBLIC_URL;?>vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="<?=PUBLIC_URL;?>vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="<?=PUBLIC_URL;?>vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="<?=PUBLIC_URL;?>vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
-            <div class="main">
+    <!-- Style css -->
+    <link href="<?=PUBLIC_URL;?>css/style.css" rel="stylesheet">
 
-                <nav class="navbar navbar-expand navbar-theme">
-                    <a class="sidebar-toggle d-flex me-2" style="margin-top: 17px">
-                        <i class="hamburger align-self-center"></i>
-                    </a>
-                </nav>
+</head>
+
+<body>
+
+    <!--*******************
+		Preloader start
+	********************-->
+    <div id="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">

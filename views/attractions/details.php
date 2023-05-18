@@ -245,7 +245,7 @@
                 <div class="sidebar-sticky">
                     <div class="list-sidebar">
                         <div class="sidebar-item">
-                            <form class="form-content rounded overflow-hidden bg-title">
+                            <form class="form-content rounded overflow-hidden bg-title" onsubmit="checkout(event,this)">
                                 <h4 class="white text-center border-b pb-2">MAKE A BOOKING</h4>
                                 <div class="row">
 
@@ -254,12 +254,23 @@
                                             <label class="white">No. Of People</label>
                                             <div class="input-box">
                                                 <i class="fa fa-male" aria-hidden="true"></i>
-                                                <select class="niceSelect" onchange="people()" id="getPeople">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
+                                                <select name="people1" class="niceSelect" onchange="people()" id="getPeople" required>
+                                                    <option>Select</option>
+                                                    <?php
+                                                    if (!empty($this->data)) {
+                                                        foreach ($this->data as $key => $value) {
+                                                            $i = 1;
+                                                            while($i<=$value["max_people"]){
+                                                                ?>
+                                                                <option value="<?=$i;?>"><?=$i;?></option>
+                                                                <?php
+                                                                $i++;
+                                                            }
+                                                        }
+                                                    }
+                                                    ?>
+                                                    
+                                                    
                                                 </select>
                                             </div>
                                         </div>
@@ -269,7 +280,7 @@
                                             <label class="white">Check in</label>
                                             <div class="input-box">
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                <input type="date" />
+                                                <input name="cin" type="date" placeholder="<?=date("Y/m/d");?>" required/>
                                             </div>
                                         </div>
                                     </div>
@@ -278,7 +289,7 @@
                                             <label class="white">Check Out</label>
                                             <div class="input-box">
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                <input type="date" />
+                                                <input name="cout" type="date" required/>
                                             </div>
                                         </div>
                                     </div>
@@ -287,13 +298,13 @@
                                             <label class="white">Pickup Location</label>
                                             <div class="input-box">
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                <select class="niceSelect">
+                                                <select name="pfee" class="niceSelect" id="location" onchange="locationfee()" required>
                                                     <option>Select</option>
                                                     <?php
                                                     if (!empty($this->pickupFee)) {
                                                         foreach ($this->pickupFee as $key => $value) {
                                                     ?>
-                                                            <option value="<?= $value["fee"]; ?>"><?= $value["location"]; ?></option>
+                                                            <option class="" value="<?= $value["fee"]; ?>"><?= $value["location"]; ?></option>
                                                     <?php
                                                         }
                                                     }
@@ -309,21 +320,29 @@
                                                                                                     if (!empty($this->data)) {
                                                                                                         foreach ($this->data as $key => $value) {
                                                                                                             echo $value["price"];
+                                                                                                            ?>
+                                                                                                            
+                                                                                                            <?php
                                                                                                         }
                                                                                                     }
-                                                                                                    ?></span>.00 x <span id="people">01</span> guests<span class="float-end fw-bold" id="subTotal">$<?php
-                                                                                                                                                                if (!empty($this->data)) {
-                                                                                                                                                                    foreach ($this->data as $key => $value) {
-                                                                                                                                                                        echo $value["price"];
-                                                                                                                                                                    }
-                                                                                                                                                                }
-                                                                                                                                                                ?>.00</span></li>
-                                                <li class="d-block pb-1">Booking fee + tax<span class="float-end  fw-bold">$10.00</span></li>
-                                                <li class="d-block  pb-1">Book now &amp; Save<span class="float-end   fw-bold">-$15</span></li>
-                                                <li class="d-block pb-1">Other fees<span class="float-end  fw-bold">Free</span></li>
+                                                                                                    ?></span>.00 x <span id="people">01</span> guests<span class="float-end fw-bold" >$<span id="subTotal"><?php
+                                                                                                    if (!empty($this->data)) {
+                                                                                                        foreach ($this->data as $key => $value) {
+                                                                                                            echo $value["price"];
+                                                                                                        }
+                                                                                                    }
+                                                                                                    ?></span>.00</span></li>
+                                                <li class="d-block pb-1">Pickup fee<span class="float-end  fw-bold">$<span id="pickupFee">00</span>.00</span></li>
+                                                <li class="d-block  pb-1">Discount<span class="float-end   fw-bold">-<span id="discount"><?php
+                                                                                                    if (!empty($this->data)) {
+                                                                                                        foreach ($this->data as $key => $value) {
+                                                                                                            echo $value["discount"];
+                                                                                                        }
+                                                                                                    }
+                                                                                                    ?></span>%</span></li>
                                                 <li class="d-block border-t">
                                                     <div class="pt-1">
-                                                        <span class="fw-bold">Total</span><span class="float-end  fw-bold">$350.00</span>
+                                                        <span class="fw-bold">Total</span><span class="float-end  fw-bold">$<span class="total">.00</span></span>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -331,7 +350,19 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group mb-0">
-                                            <a href="#" class="nir-btn w-100">Instant Book</a>
+                                            <?php 
+                                            if(!empty($this->data)){
+                                                foreach($this->data as $value){
+                                                    ?>
+                                                    <input id="d_id" type="hidden" name="d_id" value="<?=$value["id"];?>"/>
+                                                    
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+                                            <span id="addlocation"></span>
+                                            <input type="hidden" name="total" id="total1"/>
+                                            <input type="submit" value="Check Out" class="nir-btn w-100">
                                         </div>
                                     </div>
                                 </div>

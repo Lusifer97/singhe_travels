@@ -7,7 +7,7 @@ class Accommodations extends Controller {
     }
 
     function index() {
-
+        $this->view->data = $this->model->selectAll();
         $this->view->title = "Accomadations";
         $this->view->render('header');
         $this->view->render('navigation');
@@ -23,7 +23,9 @@ class Accommodations extends Controller {
         $this->view->render('footer');
     }
 
-    function types() {
+    function types($id) {
+        $id = base64_decode($id);
+        $this->view->data = $this->model->selectOne($id);
         $this->view->title = "Accomadation Types";
         $this->view->render('header');
         $this->view->render('navigation');

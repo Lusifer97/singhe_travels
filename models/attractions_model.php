@@ -18,6 +18,8 @@ class Attractions_Model extends Model
         return $result;
     }
 
+    
+
     function selectFive()
     {
         $result = $this->db->select([
@@ -261,11 +263,24 @@ class Attractions_Model extends Model
         return $result;
     }
 
-    function pickupFee()
+    function pickupFee($id)
     {
         $result = $this->db->select([
             'table' => 'pickup_fee',
-            'column' => '*'
+            'column' => '*',
+            'where' =>'destinations_id =:destinations_id',
+            'data' =>['destinations_id'=>$id]
+        ]);
+        return $result;
+    }
+
+    function getLocation($id,$fee)
+    {
+        $result = $this->db->select([
+            'table' => 'pickup_fee',
+            'column' => '*',
+            'where' =>'destinations_id =:destinations_id AND fee =:fee',
+            'data' =>['destinations_id'=>$id,'fee'=>$fee]
         ]);
         return $result;
     }

@@ -47,7 +47,7 @@ class Attractions extends Controller
         $this->view->count = $this->model->getFeedbackCount($id);
         $this->view->popularDestinations = $this->model->simillar_destination($id);
         $this->view->facilities = $this->model->getFacilities($id);
-        $this->view->pickupFee = $this->model->pickupFee();
+        $this->view->pickupFee = $this->model->pickupFee($id);
         $this->view->title = "Attraction Details";
         $this->view->render('header');
         $this->view->render('navigation');
@@ -83,6 +83,10 @@ class Attractions extends Controller
 
     function selectFive(){
         echo json_encode($this->model->selectFive());
+    }
+
+    function location($d_id,$fee){
+        echo json_encode($this->model->getLocation($d_id,$fee));
     }
 
     // SAMPLES

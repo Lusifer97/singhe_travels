@@ -13,7 +13,7 @@ class Index extends Controller
     { 
         $this->view->title = "Admin";
         $this->view->render('header');
-        // $this->view->render('navigation');
+        $this->view->render('navigation');
         $this->view->render('index/index');
         $this->view->render('footer');
         

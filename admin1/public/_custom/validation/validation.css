@@ -1,0 +1,9 @@
+/* Custom validation */
+
+.feedback {
+    color: #FF0000 !important;
+}
+
+.form_error_border {
+    border-color: #FF0000 !important;
+}

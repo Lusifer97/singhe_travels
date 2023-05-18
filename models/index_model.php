@@ -14,7 +14,7 @@ class Index_Model extends User_Login_Model
             'column' => '*',
             'where' =>'status =:status',
             'data' =>['status'=>1],
-            'limit' => 5,
+            'limit' => 4
             
         ]);
         return $result;
@@ -30,10 +30,32 @@ class Index_Model extends User_Login_Model
         return $result;
     }
 
-    function allPackages(){
+    function slider(){
+        $result = $this->db->select([
+            'table' => 'slider',
+            'column' => '*'
+            
+            
+        ]);
+        return $result;
+    }
+
+    function topPackages(){
         $result = $this->db->select([
             'table' => 'packages',
-            'column' => '*'
+            'column' => '*',
+            'limit' =>'3'
+            
+        ]);
+        return $result;
+    }
+
+    function discounts(){
+        $result = $this->db->select([
+            'table' => 'packages',
+            'column' => '*',
+            'where' => 'discount >:discount',
+            'data' => ['discount' => 0]
             
         ]);
         return $result;

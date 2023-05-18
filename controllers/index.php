@@ -20,10 +20,12 @@ class Index extends Controller
         // echo Cookie::set('jjjj', 'aaaaaaaa', time() + (86400 * 30), '/');
         //    echo Cookie::unset_cookie('name2','/');
         // var_dump($_COOKIE);
-        // $this->view->topDestinations = $this->model->popularDestinations();
-        $this->view->allPackages = $this->model->allPackages();
+        $this->view->topDestinations = $this->model->popularDestinations();
+        $this->view->topPackages = $this->model->topPackages();
+        $this->view->discounts = $this->model->discounts();
+        $this->view->slider = $this->model->slider();
         // $this->view->allHotels = $this->model->allHotels();
-        // $this->view->feedbacks = $this->model->feedbacks();
+        $this->view->feedbacks = $this->model->feedbacks();
         // $this->view->blog = $this->model->blog();
         // $this->view->count = $this->model->destinationCount();
         // Session::unset_session("user");

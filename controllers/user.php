@@ -69,11 +69,7 @@ class User extends Controller
     function logout()
     {   
         Session::unset_session("user");
-        $this->view->title = "Home";
-        $this->view->render('header');
-        $this->view->render('navigation');
-        $this->view->render('index/index');
-        $this->view->render('footer');
+        echo json_encode(['status'=>true]);
          
     }
 
@@ -95,6 +91,7 @@ class User extends Controller
         if(!empty($result)){
             foreach($result as $key => $value){
                 Session::set("user",$value["name"]);
+                Session::set("user_id",$value["id"]);
                 echo json_encode(['status'=>true]);
             }
         }else{

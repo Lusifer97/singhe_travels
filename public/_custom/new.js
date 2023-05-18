@@ -1,7 +1,7 @@
 function addcomment(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "tours/feedbacks", formData).then(function(response) {
+    postAsync(url + "tours/feedbacks", formData).then(function (response) {
         // console.log(response.data);
 
 
@@ -18,7 +18,7 @@ function addinquery(e, form) {
     $('#contact_b').html("sending");
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "contactus/inqueries", formData).then(function(response) {
+    postAsync(url + "contactus/inqueries", formData).then(function (response) {
         // console.log(response.data);
 
 
@@ -33,11 +33,11 @@ function addinquery(e, form) {
 
 function selectCity(data) {
     console.log(data.value);
-    postAsync(url + "attractions/selectCity/" + data.value, null).then(function(response) {
+    postAsync(url + "attractions/selectCity/" + data.value, null).then(function (response) {
         console.log(response.data);
 
         $('#city').html('');
-        $.each(response.data, function(key, value) {
+        $.each(response.data, function (key, value) {
 
             $('#city').append(`<option value="${value.city}">${value.city}</option>`);
         });
@@ -46,11 +46,11 @@ function selectCity(data) {
 
 
     });
-    postAsync(url + "attractions/getPrice/" + data.value + "", null).then(function(response) {
+    postAsync(url + "attractions/getPrice/" + data.value + "", null).then(function (response) {
         // console.log(response.data);
 
         $('#price').html('');
-        $.each(response.data, function(key, value) {
+        $.each(response.data, function (key, value) {
 
             $('#price').append(`<option value="${value.price}">${value.price}</option>`);
         });
@@ -65,9 +65,9 @@ function selectCity(data) {
 function filterForm(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "attractions/filtter", formData).then(function(response) {
+    postAsync(url + "attractions/filtter", formData).then(function (response) {
         $('#loadattraction').html('');
-        $.each(response.data, function(key, value) {
+        $.each(response.data, function (key, value) {
             // var id = ;
             $('#loadattraction').append(`<div class="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
             <div class="row">
@@ -107,7 +107,7 @@ function filterForm(e, form) {
 function addcommenttofeedback(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "attractions/feedback", formData).then(function(response) {
+    postAsync(url + "attractions/feedback", formData).then(function (response) {
         // console.log(response.data);
 
 
@@ -130,7 +130,7 @@ function register(e, form) {
     if (psw1 == psw2) {
         $('.nir-btn').html("sending");
         if ($('.custom-control-input').is(":checked")) {
-            postAsync(url + "user/register", formData).then(function(response) {
+            postAsync(url + "user/register", formData).then(function (response) {
                 // console.log(response.data);
 
 
@@ -176,7 +176,7 @@ function activateUser(e, form) {
     $('#submit3').html("sending");
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "user/activateUser", formData).then(function(response) {
+    postAsync(url + "user/activateUser", formData).then(function (response) {
         // console.log(response.data);
 
 
@@ -190,17 +190,28 @@ function activateUser(e, form) {
     });
 }
 
+function logout(){
+    postAsync(url + "user/logout", null).then(function (response) {
+        if (response.data.status == true) {
+            alert('You are successfully Logout..');
+            location.reload();
+
+        }
+    });
+}
+
 function login(e, form) {
     $('#contact_b').html("sending");
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "user/makeSession", formData).then(function(response) {
+    postAsync(url + "user/makeSession", formData).then(function (response) {
         // console.log(response.data);
 
 
         if (response.data.status == true) {
             alert('Access Granted..!');
-            window.open(url, "_self");
+            // window.open(url, "_self");
+            location.reload();
 
         } else {
             alert('Email or Password invalid.try again..!');
@@ -211,10 +222,10 @@ function login(e, form) {
 
 function loadmore() {
 
-    postAsync(url + "attractions/selectAll", null).then(function(response) {
+    postAsync(url + "attractions/selectAll", null).then(function (response) {
         $('#loadattraction').html('');
         $('#all').html('All');
-        $.each(response.data, function(key, value) {
+        $.each(response.data, function (key, value) {
 
             $('#loadattraction').append(`<div class="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
             <div class="row">
@@ -254,10 +265,10 @@ function loadmore() {
 
 function loadless() {
 
-    postAsync(url + "attractions/selectFive", null).then(function(response) {
+    postAsync(url + "attractions/selectFive", null).then(function (response) {
         $('#loadattraction').html('');
         $('#all').html('1-5');
-        $.each(response.data, function(key, value) {
+        $.each(response.data, function (key, value) {
 
             $('#loadattraction').append(`<div class="trend-full bg-white rounded box-shadow overflow-hidden p-4 mb-4">
             <div class="row">
@@ -297,11 +308,11 @@ function loadless() {
 
 function loadm() {
 
-    postAsync(url + "packages/selectAll", null).then(function(response) {
+    postAsync(url + "packages/selectAll", null).then(function (response) {
 
         $('#loadpackages').html('');
         $('#pall').html('All');
-        $.each(response.data, function(key, value) {
+        $.each(response.data, function (key, value) {
 
             $('#loadpackages').append(`<div  class="col-lg-6 col-md-6 mb-4 mainp">
             <div class="trend-item rounded box-shadow">
@@ -320,7 +331,7 @@ function loadm() {
                         <h5 class="theme mb-1"><i class="flaticon-location-pin"></i> ${value.status}</h5>
                         <h3 class="mb-1"><a href="${url}packages/details/${btoa(value.id)}">${value.name}</a></h3>
 
-                        <p class=" border-b pb-2 mb-2">${value.description.substr(0,60)}..</p>
+                        <p class=" border-b pb-2 mb-2">${value.description.substr(0, 60)}..</p>
                         <div class="entry-meta">
                             <div class="entry-author d-flex align-items-center">
                                 <p class="mb-0"><span class="theme fw-bold fs-5"> $${value.price}.00</span> | Per person</p>
@@ -347,11 +358,11 @@ function loadm() {
 
 function loadl() {
 
-    postAsync(url + "packages/selectSix", null).then(function(response) {
+    postAsync(url + "packages/selectSix", null).then(function (response) {
 
         $('#loadpackages').html('');
         $('#pall').html('1-6');
-        $.each(response.data, function(key, value) {
+        $.each(response.data, function (key, value) {
 
             $('#loadpackages').append(`<div  class="col-lg-6 col-md-6 mb-4 mainp">
             <div class="trend-item rounded box-shadow">
@@ -370,7 +381,7 @@ function loadl() {
                         <h5 class="theme mb-1"><i class="flaticon-location-pin"></i> ${value.status}</h5>
                         <h3 class="mb-1"><a href="${url}packages/details/${btoa(value.id)}">${value.name}</a></h3>
 
-                        <p class=" border-b pb-2 mb-2">${value.description.substr(0,60)}..</p>
+                        <p class=" border-b pb-2 mb-2">${value.description.substr(0, 60)}..</p>
                         <div class="entry-meta">
                             <div class="entry-author d-flex align-items-center">
                                 <p class="mb-0"><span class="theme fw-bold fs-5"> $${value.price}.00</span> | Per person</p>
@@ -398,7 +409,7 @@ function loadl() {
 function packageFilterForm(e, form) {
     e.preventDefault();
     var formData = new FormData(form);
-    postAsync(url + "packages/filtter", formData).then(function(response) {
+    postAsync(url + "packages/filtter", formData).then(function (response) {
         $('#loadpackages').html('');
         if (response.data == "") {
             $('#pall').html('No data');
@@ -412,7 +423,7 @@ function packageFilterForm(e, form) {
 
         } else {
 
-            $.each(response.data, function(key, value) {
+            $.each(response.data, function (key, value) {
                 // var id = ;
                 $('#pall').html(value.status);
                 $('#loadpackages').append(`<div  class="col-lg-6 col-md-6 mb-4 mainp">
@@ -432,7 +443,7 @@ function packageFilterForm(e, form) {
                             <h5 class="theme mb-1"><i class="flaticon-location-pin"></i> ${value.status}</h5>
                             <h3 class="mb-1"><a href="${url}packages/details/${btoa(value.id)}">${value.name}</a></h3>
     
-                            <p class=" border-b pb-2 mb-2">${value.description.substr(0,60)}..</p>
+                            <p class=" border-b pb-2 mb-2">${value.description.substr(0, 60)}..</p>
                             <div class="entry-meta">
                                 <div class="entry-author d-flex align-items-center">
                                     <p class="mb-0"><span class="theme fw-bold fs-5"> $${value.price}.00</span> | Per person</p>
@@ -459,7 +470,7 @@ function packageFilterForm(e, form) {
     });
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     if (user != "") {
         $('.lrbutton').css("display", "none")
     }
@@ -470,6 +481,51 @@ function people() {
     var singlePrice = $('#singlePrice').html();
     var subTotal = singlePrice * people;
     $('#people').html(people);
-    console.log(subTotal);
-    $('#subTotal').html('$ ' + subTotal + '.00');
+    // console.log(subTotal);
+    $('#subTotal').html(subTotal);
+    var discount = (subTotal + parseInt($('#pickupFee').html())) * parseInt($('#discount').html()) / 100;
+    var total = (subTotal + parseInt($('#pickupFee').html())) - discount;
+    $('.total').html(total);
+    $('#total1').val(total);
+    // console.log(total);
+
 }
+
+function locationfee() {
+
+    var fee = $('#location').val();
+    var d_id = $('#d_id').val();
+    postAsync(url + "attractions/location/"+d_id+"/"+fee+"", null).then(function (response) {
+        $('#addlocation').html('');
+        $.each(response.data, function (key, value) {
+            
+            $('#addlocation').append(`<input type="hidden" name="location" value="${value.location}"/>`);
+        });
+    });
+    console.log(location);
+    $('#pickupFee').html(fee);
+    var subTotal = parseInt($('#subTotal').html());
+    var discount = (subTotal + parseInt($('#pickupFee').html())) * parseInt($('#discount').html()) / 100;
+    var total = (subTotal + parseInt($('#pickupFee').html())) - discount;
+    $('.total').html(total);
+    $('#total1').val(total);
+}
+
+function checkout(e, form) {
+    if (user == "") {
+        alert("please login or sing up before check out");
+        location.reload();
+    } else {
+        e.preventDefault();
+        var formData = new FormData(form);
+        postAsync(url + "booking/checkout", formData).then(function (response) {
+            // console.log(response);
+            if (response.data.oder_id !== null) {
+                alert('Item Check out successfully.. check your user panel to proceed..');
+                window.open(url+"booking/index/"+response.data.oder_id+"","_self");
+    
+            }
+        });
+    }
+}
+
